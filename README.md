@@ -9,21 +9,21 @@
 
 - [ ] Cadastrar / Editar / Excluir um cliente
 - [ ] Cadastrar / Editar / Excluir um  empreendimento
-- [ ] Listar empreendimentos
-- [ ] Empreendimento => Pode possuir blocos e/ ou unidades
-- [ ] Listar unidades de um empreendimento organizadas por bloco/andar se existirem
 - [ ] Cadastrar / Editar / Excluir um bloco
-- [ ] Blocos                  => Pode possuir andares e/ou unidades
 - [ ] Cadastrar / Editar / Excluir um andar
 - [ ] Cadastrar / Editar / Excluir uma unidade
-- [ ] Alterar status de unidade
 - [ ] Cadastrar / Editar / Excluir / Cancelar uma reserva
-- [ ] Lista de Reservas
 - [ ] Cadastrar / Editar / Excluir / Cancelar uma proposta
-- [ ] Lista de propostas
 - [ ] Cadastrar / Editar / Excluir / Cancelar uma venda
+- [ ] Listar empreendimentos
+- [ ] Lista de Reservas
+- [ ] Lista de propostas
 - [ ] Lista de vendas
+- [ ] Empreendimento => Pode possuir blocos e/ ou unidades
+- [ ] Blocos                  => Pode possuir andares e/ou unidades
+- [ ] Listar unidades de um empreendimento organizadas por bloco/andar se existirem
 - [ ] Regra de unidades
+- [ ] Alterar status de unidade
 - [ ] Andares/Pavimentos => Pode possuir unidades
 
 Somente as unidades podem sofrer ações de reserva/proposta/venda.
