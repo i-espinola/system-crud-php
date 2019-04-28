@@ -75,6 +75,7 @@ export function server() {
     gulp.watch(path.styles.src).on("change", gulp.parallel(styles, browserSync.reload));
     gulp.watch(path.scripts.src).on("change", gulp.parallel(scripts, browserSync.reload));
     gulp.watch(path.img.src).on("change", gulp.parallel(imgs, browserSync.reload));
+    gulp.watch(path.vendor.src).on("change", gulp.parallel(vendor, browserSync.reload));
 }
 
 // Task View
