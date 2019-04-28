@@ -4,6 +4,9 @@
     "description": "Teste Front-end Koper",
     "private": true,
     "scripts": {
+        "build": "gulp build",
+        "clean": "gulp clean",
+        "start": "npm i && npm up",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -18,18 +21,18 @@
     "homepage": "https://github.com/i-espinola/koper#readme",
     "dependencies": {},
     "devDependencies": {
-        "@babel/core": "*",
-        "@babel/preset-env": "*",
-        "@babel/register": "*",
-        "browser-sync": "*",
-        "del": "*",
-        "gulp": "*",
-        "gulp-babel": "*",
-        "gulp-clean-css": "*",
-        "gulp-htmlmin": "*",
-        "gulp-imagemin": "*",
-        "gulp-rename": "*",
-        "gulp-sass": "*",
-        "gulp-uglify": "*"
+        "@babel/core": "^7.4.4",
+        "@babel/preset-env": "^7.4.4",
+        "@babel/register": "^7.4.4",
+        "browser-sync": "^2.26.5",
+        "del": "^4.1.0",
+        "gulp": "^4.0.1",
+        "gulp-babel": "^8.0.0",
+        "gulp-clean-css": "^4.2.0",
+        "gulp-htmlmin": "^5.0.1",
+        "gulp-imagemin": "^5.0.3",
+        "gulp-rename": "^1.4.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-uglify": "^3.0.2"
     }
 }

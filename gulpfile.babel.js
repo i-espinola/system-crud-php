@@ -7,16 +7,14 @@ const path = {
     build: ['./public'],
     views: {
         src: [
-            './src/views/*',
-            './src/views/**/*'
+            './src/views/*'
         ],
         build: './public'
     },
     styles: {
         src: [
-            './src/assets/scss/*.css',
             './src/assets/scss/*.scss',
-            './src/assets/scss/**/*.scss',
+            './src/assets/scss/**/*.scss'
         ],
         build: './public/assets/css'
     },
@@ -35,17 +33,16 @@ const path = {
     },
     font: {
         src: [
-            './assets/font/*',
-            './assets/font/**/*'
+            './src/assets/fonts/*',
+            './src/assets/fonts/**/*'
         ],
-        build: './public/assets/font'
+        build: './public/assets/fonts'
     },
-    icon: {
+    vendor: {
         src: [
-            './assets/icon/*',
-            './assets/icon/**/*'
+            './src/assets/vendor/**/*'
         ],
-        build: './public/assets/icon'
+        build: './public/assets/vendor'
     },
 };
 
@@ -73,10 +70,10 @@ export function server() {
         }
     });
 
-    gulp.watch(["./src/views/*", "./src/views/**/*"]).on("change", gulp.parallel(views, browserSync.reload));
-    gulp.watch(["./src/assets/scss/*", "./src/assets/scss/**/*"]).on("change", gulp.parallel(styles, browserSync.reload));
-    gulp.watch(["./src/assets/js/*", "./src/assets/js/**/*"]).on("change", gulp.parallel(scripts, browserSync.reload));
-    gulp.watch(["./src/assets/img/*", "./src/assets/img/**/*"]).on("change", gulp.parallel(imgs, browserSync.reload));
+    gulp.watch(path.views.src).on("change", gulp.parallel(views, browserSync.reload));
+    gulp.watch(path.styles.src).on("change", gulp.parallel(styles, browserSync.reload));
+    gulp.watch(path.scripts.src).on("change", gulp.parallel(scripts, browserSync.reload));
+    gulp.watch(path.img.src).on("change", gulp.parallel(imgs, browserSync.reload));
 }
 
 // Task View
@@ -128,22 +125,20 @@ export function scripts() {
 
 // Task Import Fonts
 export function fonts() {
-    return gulp.src(path.font.src, path.icon.src)
-        .pipe(gulp.dest(path.font.build, path.icon.build));
-
+    return gulp.src(path.font.src)
+        .pipe(gulp.dest(path.font.build));
 }
 
-// Task Import Icons
-export function icons() {
-    return gulp.src(path.icon.src)
-        .pipe(gulp.dest(path.icon.build));
-
+// Task Import vendor
+export function vendor() {
+    return gulp.src(path.vendor.src)
+        .pipe(gulp.dest(path.vendor.build));
 }
 
 // Task Clean All Build
 export const clean = () => del(['./public/*']);
 
 // Task Precompile project
-export const build = gulp.series(clean, gulp.parallel(views, styles, imgs, scripts, fonts, icons));
+export const build = gulp.series(clean, gulp.parallel(views, styles, imgs, scripts, fonts, vendor));
 
 export default server;

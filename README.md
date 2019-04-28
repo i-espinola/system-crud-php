@@ -7,7 +7,7 @@
 
 - [ ] O sistema deve poder realizar as seguintes funcionalidades
 - [ ] Cadastrar / Editar / Excluir um cliente
-- [ ] Cadastrar / Editar / Excluir um  empreendimento 
+- [ ] Cadastrar / Editar / Excluir um  empreendimento
 - [ ] Cadastrar / Editar / Excluir um bloco
 - [ ] Cadastrar / Editar / Excluir um andar
 - [ ] Cadastrar / Editar / Excluir uma unidade
@@ -31,7 +31,7 @@ Uma unidade pode ter os seguintes status => Disponível / indisponível / reserv
 Disponível => Pode ser reservada/vendida ou tornar indisponível para venda
 Indisponível =>  Somente é possível torna-la Disponível
 Reservada => Gerar proposta ou cancelar reserva, cancelar proposta, gerar venda
-Vendida => Pode ser cancelada a venda retornando a unidade para Disponível 
+Vendida => Pode ser cancelada a venda retornando a unidade para Disponível
 
 ### Dados de cadastro
 
@@ -64,7 +64,7 @@ Exclusão só pode ser realizada se a proposta estiver em análise.
 ### Regras Vendas
 
 Ao realizar uma venda é necessário ter um cliente, data de venda, uma ou mais unidades para vender. Nesse momento o sistema deve apresentar o valor de cada unidade e o valor total da venda e as formas de pagamento.
-A edição da venda, pode  somente alterar a(s) unidade(s) da mesma e a forma de pagamento. 
+A edição da venda, pode  somente alterar a(s) unidade(s) da mesma e a forma de pagamento.
 Cancelamento da venda o sistema deve liberar a(s) unidade(s) para disponível, permitir colocar a data de cancelamento e motivo
 Ao excluir uma venda apenas torna a(s) unidade(s) para disponível, somente é possível excluir uma venda direta, ou seja, sem ela ter uma reserva/proposta
 Uma venda deve respeitar o critério de valor mínimo da unidade.
