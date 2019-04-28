@@ -5,24 +5,25 @@
 
 ### Controle de venda de unidades
 
-- [ ] O sistema deve poder realizar as seguintes funcionalidades
+#### O sistema deve poder realizar as seguintes funcionalidades
+
 - [ ] Cadastrar / Editar / Excluir um cliente
 - [ ] Cadastrar / Editar / Excluir um  empreendimento
+- [ ] Listar empreendimentos
+- [ ] Empreendimento => Pode possuir blocos e/ ou unidades
+- [ ] Listar unidades de um empreendimento organizadas por bloco/andar se existirem
 - [ ] Cadastrar / Editar / Excluir um bloco
+- [ ] Blocos                  => Pode possuir andares e/ou unidades
 - [ ] Cadastrar / Editar / Excluir um andar
 - [ ] Cadastrar / Editar / Excluir uma unidade
-- [ ] Listar empreendimentos
-- [ ] Listar unidades de um empreendimento organizadas por bloco/andar se existirem
+- [ ] Alterar status de unidade
 - [ ] Cadastrar / Editar / Excluir / Cancelar uma reserva
-- [ ] Cadastrar / Editar / Excluir / Cancelar uma proposta
 - [ ] Lista de Reservas
+- [ ] Cadastrar / Editar / Excluir / Cancelar uma proposta
 - [ ] Lista de propostas
 - [ ] Cadastrar / Editar / Excluir / Cancelar uma venda
 - [ ] Lista de vendas
-- [ ] Alterar status de unidade
 - [ ] Regra de unidades
-- [ ] Empreendimento => Pode possuir blocos e/ ou unidades
-- [ ] Blocos                  => Pode possuir andares e/ou unidades
 - [ ] Andares/Pavimentos => Pode possuir unidades
 
 Somente as unidades podem sofrer ações de reserva/proposta/venda.

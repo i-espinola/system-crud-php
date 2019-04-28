@@ -7,6 +7,7 @@ const path = {
     build: ['./public'],
     views: {
         src: [
+            './src/views/**/*',
             './src/views/*'
         ],
         build: './public'
@@ -79,21 +80,11 @@ export function server() {
 // Task View
 export function views() {
     return gulp.src(path.views.src)
-        .pipe(htmlmin({
-            collapseWhitespace: true,
-            removeComments: true
-        }))
+        // .pipe(htmlmin({
+        //     collapseWhitespace: true,
+        //     removeComments: true
+        // }))
         .pipe(gulp.dest(path.views.build))
-        .pipe(browserSync.stream());
-}
-
-// Task Otimizer Images
-export function imgs() {
-    return gulp.src(path.img.src)
-        .pipe(imagemin({
-            progressive: true
-        }))
-        .pipe(gulp.dest(path.img.build))
         .pipe(browserSync.stream());
 }
 
@@ -101,7 +92,7 @@ export function imgs() {
 export function styles() {
     return gulp.src(path.styles.src)
         .pipe(sass())
-        .pipe(cleanCSS())
+        // .pipe(cleanCSS())
         .pipe(rename({
             suffix: '.min'
         }))
@@ -115,11 +106,21 @@ export function scripts() {
             sourcemaps: true
         })
         .pipe(babel())
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
         .pipe(gulp.dest(path.scripts.build))
+        .pipe(browserSync.stream());
+}
+
+// Task Otimizer Images
+export function imgs() {
+    return gulp.src(path.img.src)
+        .pipe(imagemin({
+            progressive: true
+        }))
+        .pipe(gulp.dest(path.img.build))
         .pipe(browserSync.stream());
 }
 
