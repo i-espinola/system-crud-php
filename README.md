@@ -16,14 +16,14 @@
 - [ ] Cadastrar / Editar / Excluir / Cancelar uma proposta
 - [ ] Cadastrar / Editar / Excluir / Cancelar uma venda
 - [ ] Listar empreendimentos
+- [ ] Listar unidades de um empreendimento organizadas por bloco/andar se existirem
 - [ ] Lista de Reservas
 - [ ] Lista de propostas
 - [ ] Lista de vendas
-- [ ] Empreendimento => Pode possuir blocos e/ ou unidades
-- [ ] Blocos                  => Pode possuir andares e/ou unidades
-- [ ] Listar unidades de um empreendimento organizadas por bloco/andar se existirem
 - [ ] Regra de unidades
 - [ ] Alterar status de unidade
+- [ ] Empreendimento => Pode possuir blocos e/ ou unidades
+- [ ] Blocos => Pode possuir andares e/ou unidades
 - [ ] Andares/Pavimentos => Pode possuir unidades
 
 Somente as unidades podem sofrer ações de reserva/proposta/venda.
