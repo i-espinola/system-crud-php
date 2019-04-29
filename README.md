@@ -25,8 +25,7 @@
 - [ ] Empreendimento => Pode possuir blocos e/ ou unidades
 - [ ] Blocos => Pode possuir andares e/ou unidades
 - [ ] Andares/Pavimentos => Pode possuir unidades
-
-Somente as unidades podem sofrer ações de reserva/proposta/venda.
+- [ ] Somente as unidades podem sofrer ações de reserva/proposta/venda.
 
 Uma unidade pode ter os seguintes status => Disponível / indisponível / reservada / Vendida<br>
 Disponível => Pode ser reservada/vendida ou tornar indisponível para venda<br>
