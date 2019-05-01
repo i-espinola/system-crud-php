@@ -67,6 +67,17 @@
             </nav>
             <!-- NAV -->
 
+            <!-- HEADER -->
+            <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+                <div class="container align-items-center">
+                    <div class="header-body">
+                        <div class="row align-items-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HEADER -->
+
             <!-- CONTENT -->
             <div class="container mt--7">
                 <div class="row">
@@ -123,7 +134,7 @@
                                     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title">Cadastrar</h1>
+                                                <h1 class="modal-title">Cadastrar cliente</h1>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">×</span>
                                                 </button>
@@ -154,16 +165,16 @@
                                                             </div>
                                                         </div>
                                                         <div class="col form-group">
-                                                            <div class="input-slider-container">
-                                                                <div id="input-slider" class="input-slider" data-range-value-min="100" data-range-value-max="500"></div>
-                                                                <!-- Input slider values -->
-                                                                <div class="row mt-3">
-                                                                    <div class="col-6">
-                                                                        <span id="input-slider-value" class="range-slider-value" data-range-value-low="100"></span>
-                                                                    </div>
+                                                            <label for="income" class="form-control-label">Renda</label>
+                                                            <div class="input-group ">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">R$</span>
+                                                                </div>
+                                                                <input class="form-control" type="tel" maxlength="8" id="income">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">,00</span>
                                                                 </div>
                                                             </div>
-
                                                         </div>
                                                     </div>
                                                 </form>
@@ -176,204 +187,6 @@
                                     </div>
                                 </div>
                                 <!-- ENTERPRISE -->
-
-                                <!-- BLOCKS -->
-                                <div class="modal fade" id="modal-block" tabindex="-1" role="dialog" aria-labelledby="modal-block" aria-hidden="true">
-                                    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title">Cadastrar</h1>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">×</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row align-items-center">
-                                                    <div class="col-10">
-                                                        <div class="nav-wrapper align-items-center">
-                                                            <span>É possível adicionar <b>Andares</b> e <b>Unidades</b> neste bloco</span>
-                                                            <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
-                                                                <li class="nav-item">
-                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="block" data-toggle="tab" href="#" role="tab"
-                                                                        aria-selected="true">Bloco</a>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="storey" data-toggle="tab" href="#"
-                                                                        role="tab">Andares</a>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="unit" data-toggle="tab" href="#" role="tab">Unidade</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <form class="form-block">
-                                                    <div class="row">
-                                                        <div class="col form-group">
-                                                            <label for="nome-bloco" class="form-control-label">Nome</label>
-                                                            <input class="form-control" type="text" id="nome-bloco">
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
-                                                <button type="button" class="btn btn-primary ml-auto">Cadastrar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- BLOCKS -->
-
-                                <!-- STOREY -->
-                                <div class="modal fade" id="modal-storey" tabindex="-1" role="dialog" aria-labelledby="modal-storey" aria-hidden="true">
-                                    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title">Cadastrar</h1>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">×</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row align-items-center">
-                                                    <div class="col-10">
-                                                        <div class="nav-wrapper align-items-center">
-                                                            <span>É possível adicionar <b>Unidades</b> neste Andar</span>
-                                                            <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
-                                                                <li class="nav-item">
-                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="storey" data-toggle="tab" href="#" role="tab"
-                                                                        aria-selected="true">Andares</a>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="unit" data-toggle="tab" href="#" role="tab">Unidade</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <form class="form-storey">
-                                                    <div class="row">
-                                                        <div class="col form-group">
-                                                            <label for="nome-andar" class="form-control-label">Nome</label>
-                                                            <input class="form-control" type="text" id="nome-andar">
-                                                        </div>
-                                                        <div class="col form-group">
-                                                            <label for="nome-bloco" class="form-control-label">Posição</label>
-                                                            <select class="form-control" type="text" id="nome-bloco">
-                                                                <option selected>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                                <option>4</option>
-                                                                <option>5</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
-                                                <button type="button" class="btn btn-primary ml-auto">Cadastrar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- STOREY -->
-
-                                <!-- UNITS -->
-                                <div class="modal fade" id="modal-unit" tabindex="-1" role="dialog" aria-labelledby="modal-unit" aria-hidden="true">
-                                    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title">Cadastrar</h1>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">×</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form class="form-unit">
-                                                    <div class="row">
-                                                        <div class="col form-group">
-                                                            <label for="nome-unidade" class="form-control-label">Nome</label>
-                                                            <input class="form-control" type="text" id="nome-unidade">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col form-group">
-                                                            <label for="status" class="form-control-label">Status</label>
-                                                            <select class="form-control" type="text" id="status">
-                                                                <option selected>Disponível</option>
-                                                                <option>Indispinível</option>
-                                                                <option>Reservada</option>
-                                                                <option>Vendida</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col form-group">
-                                                            <label for="vendavel" class="form-control-label">Vendável</label>
-                                                            <select class="form-control" type="text" id="vendavel">
-                                                                <option>Difícil</option>
-                                                                <option>Facil</option>
-                                                                <option selected>Normal</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col form-group">
-                                                            <label for="area-privativa" class="form-control-label">Área privativa</label>
-                                                            <div class="input-group">
-                                                                <input class="form-control" type="tel" maxlength="4" id="area-privativa">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text">m²</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col form-group">
-                                                            <label for="area-comum" class="form-control-label">Área comum</label>
-                                                            <div class="input-group">
-                                                                <input class="form-control" type="tel" maxlength="4" id="area-comum">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text">m²</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col form-group">
-                                                            <label for="valor" class="form-control-label">Valor</label>
-                                                            <div class="input-group ">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">R$</span>
-                                                                </div>
-                                                                <input class="form-control" type="tel" maxlength="8" id="valor">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text">,00</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col form-group">
-                                                            <label for="valor-minimo" class="form-control-label">Valor</label>
-                                                            <div class="input-group ">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">R$</span>
-                                                                </div>
-                                                                <input class="form-control" type="tel" maxlength="8" id="valor-minimo">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text">,00</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
-                                                <button type="button" class="btn btn-primary ml-auto">Cadastrar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- UNITS -->
 
                                 <!-- MODALS -->
                             </div>
