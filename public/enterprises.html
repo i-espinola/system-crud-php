@@ -52,13 +52,13 @@
                             </div>
                         </div>
                         <ul class="navbar-nav ml-lg-auto">
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-icon" href="catalog.html"><span class="nav-link-inner--text">Catalogo</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-icon" href="business.html"><span class="nav-link-inner--text">Comercial</span></a>
-                            </li>
                             <li class="nav-item active">
+                                <a class="nav-link nav-link-icon" href="#"><span class="nav-link-inner--text">Catalogo</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-icon" href="#"><span class="nav-link-inner--text">Comercial</span></a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link nav-link-icon" href="#"><span class="nav-link-inner--text">Clientes</span></a>
                             </li>
                         </ul>
@@ -67,6 +67,36 @@
             </nav>
             <!-- NAV -->
 
+            <!-- HEADER -->
+            <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+                <div class="container align-items-center">
+                    <div class="header-body">
+                        <div class="row align-items-center">
+                            <div class="col-xl-10">
+                                <div class="nav-wrapper">
+                                    <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link mb-sm-3 mb-md-0 active" id="enterprise-tab" data-toggle="tab" href="#enterprise" role="tab" aria-controls="enterprise"
+                                                aria-selected="true">Empreendimentos</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link mb-sm-3 mb-md-0" id="block-tab" data-toggle="tab" href="#block" role="tab" aria-controls="block" aria-selected="false">Blocos</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link mb-sm-3 mb-md-0" id="storey-tab" data-toggle="tab" href="#storey" role="tab" aria-controls="storey" aria-selected="false">Andares</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link mb-sm-3 mb-md-0" id="unit-tab" data-toggle="tab" href="#unit" role="tab" aria-controls="unit" aria-selected="false">Unidades</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HEADER -->
+
             <!-- CONTENT -->
             <div class="container mt--7">
                 <div class="row">
@@ -74,14 +104,14 @@
                         <div class="card shadow">
                             <div class="tab-content">
 
-                                <!-- SECTION CLIENTS -->
-                                <div class="tab-pane fade show active" id="clients">
+                                <!-- SECTION ENTERPRISES -->
+                                <div class="tab-pane fade show active" id="enterprise" role="tabpanel" aria-labelledby="enterprise-tab">
                                     <div class="card shadow">
                                         <div class="card-top">
                                             <div class="card-header border-0">
-                                                <h3 class="mb-0">Lista de Clientes</h3>
+                                                <h3 class="mb-0">Lista de empreendimentos</h3>
                                             </div>
-                                            <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-client">
+                                            <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-enterprise">
                                                 <i class="fas fa-plus"></i>
                                             </button>
                                         </div>
@@ -90,20 +120,20 @@
                                                 <thead class="thead-light">
                                                     <tr>
                                                         <th>Nome</th>
-                                                        <th>CFP</th>
-                                                        <th>Data nascimento</th>
-                                                        <th>Endereço</th>
-                                                        <th>Renda</th>
+                                                        <th>Inicio</th>
+                                                        <th>Conclusão</th>
+                                                        <th>Tipo</th>
+                                                        <th>Área</th>
                                                         <th>Ações</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Ivan Espínola</td>
-                                                        <td>388.921.097-80</td>
-                                                        <td>09/02/1988</td>
-                                                        <td>Av: Pequeno principe. Campeche - Florianópolis/SC</td>
-                                                        <td>R$ 5.000,00</td>
+                                                        <td>Loft beira mar</td>
+                                                        <td>01/01/2019</td>
+                                                        <td>31/12/2019</td>
+                                                        <td>Residencial</td>
+                                                        <td>120 m²</td>
                                                         <td class="table-actions">
                                                             <a href="#!" class="nav-link nav-link-icon" data-toggle="tooltip" data-original-title="Editar"><i class="far fa-edit"></i></a>
                                                             <a href="#!" class="nav-link nav-link-icon" data-toggle="tooltip" data-original-title="Apagar"><i class="fas fa-trash"></i></a>
@@ -116,10 +146,126 @@
                                 </div>
                                 <!-- SECTION ENTERPRISES -->
 
+                                <!-- SECTION BLOCK -->
+                                <div class="tab-pane fade" id="block" role="tabpanel" aria-labelledby="block-tab">
+                                    <div class="card shadow">
+                                        <div class="card-top">
+                                            <div class="card-header border-0">
+                                                <h3 class="mb-0">Lista de Blocos</h3>
+                                            </div>
+                                            <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-block">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-flush">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Nome</th>
+                                                        <th>Ações</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Alabama</td>
+                                                        <td class="table-actions">
+                                                            <a href="#!" class="nav-link nav-link-icon" data-toggle="tooltip" data-original-title="Editar"><i class="far fa-edit"></i></a>
+                                                            <a href="#!" class="nav-link nav-link-icon" data-toggle="tooltip" data-original-title="Apagar"><i class="fas fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- SECTION BLOCK -->
+
+                                <!-- SECTION STOREY -->
+                                <div class="tab-pane fade" id="storey" role="tabpanel" aria-labelledby="storey-tab">
+                                    <div class="card shadow">
+                                        <div class="card-top">
+                                            <div class="card-header border-0">
+                                                <h3 class="mb-0">Lista de Andares</h3>
+                                            </div>
+                                            <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-storey">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-flush">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Nome</th>
+                                                        <th>Posição</th>
+                                                        <th>Ações</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Terreo</td>
+                                                        <td>3</td>
+                                                        <td class="table-actions">
+                                                            <a href="#!" class="nav-link nav-link-icon" data-toggle="tooltip" data-original-title="Editar"><i class="far fa-edit"></i></a>
+                                                            <a href="#!" class="nav-link nav-link-icon" data-toggle="tooltip" data-original-title="Apagar"><i class="fas fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- SECTION STOREY -->
+
+                                <!-- SECTION UNIT -->
+                                <div class="tab-pane fade" id="unit" role="tabpanel" aria-labelledby="unit-tab">
+                                    <div class="card shadow">
+                                        <div class="card-top">
+                                            <div class="card-header border-0">
+                                                <h3 class="mb-0">Lista de Unidade</h3>
+                                            </div>
+                                            <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-unit">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-flush">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Nome</th>
+                                                        <th>Status</th>
+                                                        <th>Área privativa</th>
+                                                        <th>Área Comum</th>
+                                                        <th>Vendável</th>
+                                                        <th>Valor</th>
+                                                        <th>Valor mínimo</th>
+                                                        <th>Ações</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Alabama</td>
+                                                        <td>Disponível</td>
+                                                        <td>93 m²</td>
+                                                        <td>150 m²</td>
+                                                        <td>Medium</td>
+                                                        <td>R$ 1.500.000,00</td>
+                                                        <td>R$ 900.000,00</td>
+                                                        <td class="table-actions">
+                                                            <a href="#!" class="nav-link nav-link-icon" data-toggle="tooltip" data-original-title="Editar"><i class="far fa-edit"></i></a>
+                                                            <a href="#!" class="nav-link nav-link-icon" data-toggle="tooltip" data-original-title="Apagar"><i class="fas fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- SECTION UNIT -->
+
                                 <!-- MODALS -->
 
                                 <!-- ENTERPRISE -->
-                                <div class="modal fade" id="modal-client" tabindex="-1" role="dialog" aria-labelledby="modal-client" aria-hidden="true">
+                                <div class="modal fade" id="modal-enterprise" tabindex="-1" role="dialog" aria-labelledby="modal-enterprise" aria-hidden="true">
                                     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -129,41 +275,67 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form class="form-client">
+                                                <div class="row align-items-center">
+                                                    <div class="col-10">
+                                                        <div class="nav-wrapper align-items-center">
+                                                            <span>É possível adicionar <b>blocos</b> e <b>unidades</b> neste empreendimento</span>
+                                                            <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
+                                                                <li class="nav-item">
+                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="enterprise" data-toggle="tab" href="#"
+                                                                        role="tab" aria-selected="true">Empreendimento</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="block" data-toggle="tab" href="#" role="tab">Bloco</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="unit" data-toggle="tab" href="#" role="tab">Unidade</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <form class="form-enterprise">
                                                     <div class="row">
                                                         <div class="col form-group">
-                                                            <label for="nome-client" class="form-control-label">Nome</label>
-                                                            <input class="form-control" type="text" id="nome-client">
+                                                            <label for="nome-empreendimento" class="form-control-label">Nome</label>
+                                                            <input class="form-control" type="text" id="nome-empreendimento">
                                                         </div>
                                                         <div class="col form-group">
-                                                            <label for="cpf" class="form-control-label">CPF</label>
-                                                            <input class="form-control" type="tel" maxlength="11" id="cpf">
+                                                            <label for="tipo" class="form-control-label">Tipo</label>
+                                                            <select class="form-control" type="text" id="tipo">
+                                                                <option selected>Residencial</option>
+                                                                <option>Comercial</option>
+                                                                <option>Loteamento</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col form-group">
-                                                            <label for="address" class="form-control-label">Endereço</label>
+                                                            <label for="endereco" class="form-control-label">Endereço</label>
                                                             <input class="form-control" type="text" id="endereco">
                                                         </div>
-                                                    </div>
-                                                    <div class="row">
                                                         <div class="col form-group">
-                                                            <label for="birth" class="form-control-label">Data de nascimento</label>
+                                                            <label for="area-total" class="form-control-label">Área Total</label>
                                                             <div class="input-group">
-                                                                <input class="form-control datepicker" type="text" value="06/20/1990" id="birth">
+                                                                <input class="form-control" type="tel" maxlength="4" id="area-total">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">m²</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row input-daterange datepicker">
+                                                        <div class="col form-group">
+                                                            <label for="inicio" class="form-control-label">Data de início</label>
+                                                            <div class="input-group">
+                                                                <input class="form-control" placeholder="Inicio" type="text" value="06/18/2019" id="inicio">
                                                             </div>
                                                         </div>
                                                         <div class="col form-group">
-                                                            <div class="input-slider-container">
-                                                                <div id="input-slider" class="input-slider" data-range-value-min="100" data-range-value-max="500"></div>
-                                                                <!-- Input slider values -->
-                                                                <div class="row mt-3">
-                                                                    <div class="col-6">
-                                                                        <span id="input-slider-value" class="range-slider-value" data-range-value-low="100"></span>
-                                                                    </div>
-                                                                </div>
+                                                            <label for="conclusao" class="form-control-label">Data de conclusão</label>
+                                                            <div class="input-group">
+                                                                <input class="form-control" placeholder="Conclusão" type="text" value="06/22/2019" id="conclusao">
                                                             </div>
-
                                                         </div>
                                                     </div>
                                                 </form>
