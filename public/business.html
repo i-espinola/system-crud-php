@@ -59,7 +59,7 @@
                                 <a class="nav-link nav-link-icon" href="#"><span class="nav-link-inner--text">Comercial</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link nav-link-icon" href="client.html"><span class="nav-link-inner--text">Clientes</span></a>
+                                <a class="nav-link nav-link-icon" href="clients.html"><span class="nav-link-inner--text">Clientes</span></a>
                             </li>
                         </ul>
                     </div>
@@ -76,17 +76,15 @@
                                 <div class="nav-wrapper">
                                     <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link mb-sm-3 mb-md-0 active" id="enterprise-tab" data-toggle="tab" href="#enterprise" role="tab" aria-controls="enterprise"
-                                                aria-selected="true">Empreendimentos</a>
+                                            <a class="nav-link mb-sm-3 mb-md-0 active" id="reserve-tab" data-toggle="tab" href="#reserve" role="tab" aria-controls="reserve"
+                                                aria-selected="true">Reservas</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link mb-sm-3 mb-md-0" id="block-tab" data-toggle="tab" href="#block" role="tab" aria-controls="block" aria-selected="false">Blocos</a>
+                                            <a class="nav-link mb-sm-3 mb-md-0" id="proposal-tab" data-toggle="tab" href="#proposal" role="tab" aria-controls="proposal"
+                                                aria-selected="false">Propostas</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link mb-sm-3 mb-md-0" id="storey-tab" data-toggle="tab" href="#storey" role="tab" aria-controls="storey" aria-selected="false">Andares</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link mb-sm-3 mb-md-0" id="unit-tab" data-toggle="tab" href="#unit" role="tab" aria-controls="unit" aria-selected="false">Unidades</a>
+                                            <a class="nav-link mb-sm-3 mb-md-0" id="sale-tab" data-toggle="tab" href="#sale" role="tab" aria-controls="sale" aria-selected="false">Vendas</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -104,14 +102,14 @@
                         <div class="card shadow">
                             <div class="tab-content">
 
-                                <!-- SECTION ENTERPRISES -->
-                                <div class="tab-pane fade show active" id="enterprise" role="tabpanel" aria-labelledby="enterprise-tab">
+                                <!-- SECTION RESERVE -->
+                                <div class="tab-pane fade show active" id="reserve" role="tabpanel" aria-labelledby="reserve-tab">
                                     <div class="card shadow">
                                         <div class="card-top">
                                             <div class="card-header border-0">
-                                                <h3 class="mb-0">Lista de empreendimentos</h3>
+                                                <h3 class="mb-0">Lista de reservas</h3>
                                             </div>
-                                            <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-enterprise">
+                                            <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-reserve">
                                                 <i class="fas fa-plus"></i>
                                             </button>
                                         </div>
@@ -144,16 +142,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- SECTION ENTERPRISES -->
+                                <!-- SECTION RESERVE -->
 
-                                <!-- SECTION BLOCK -->
-                                <div class="tab-pane fade" id="block" role="tabpanel" aria-labelledby="block-tab">
+                                <!-- SECTION PROPOSAL -->
+                                <div class="tab-pane fade" id="proposal" role="tabpanel" aria-labelledby="proposal-tab">
                                     <div class="card shadow">
                                         <div class="card-top">
                                             <div class="card-header border-0">
-                                                <h3 class="mb-0">Lista de Blocos</h3>
+                                                <h3 class="mb-0">Lista de propostas</h3>
                                             </div>
-                                            <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-block">
+                                            <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-proposal">
                                                 <i class="fas fa-plus"></i>
                                             </button>
                                         </div>
@@ -178,16 +176,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- SECTION BLOCK -->
+                                <!-- SECTION PROPOSAL -->
 
-                                <!-- SECTION STOREY -->
-                                <div class="tab-pane fade" id="storey" role="tabpanel" aria-labelledby="storey-tab">
+                                <!-- SECTION SALE -->
+                                <div class="tab-pane fade" id="sale" role="tabpanel" aria-labelledby="sale-tab">
                                     <div class="card shadow">
                                         <div class="card-top">
                                             <div class="card-header border-0">
-                                                <h3 class="mb-0">Lista de Andares</h3>
+                                                <h3 class="mb-0">Lista de vendas</h3>
                                             </div>
-                                            <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-storey">
+                                            <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-sale">
                                                 <i class="fas fa-plus"></i>
                                             </button>
                                         </div>
@@ -214,7 +212,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- SECTION STOREY -->
+                                <!-- SECTION SALE -->
 
                                 <!-- SECTION UNIT -->
                                 <div class="tab-pane fade" id="unit" role="tabpanel" aria-labelledby="unit-tab">
@@ -265,7 +263,7 @@
                                 <!-- MODALS -->
 
                                 <!-- ENTERPRISE -->
-                                <div class="modal fade" id="modal-enterprise" tabindex="-1" role="dialog" aria-labelledby="modal-enterprise" aria-hidden="true">
+                                <div class="modal fade" id="modal-reserve" tabindex="-1" role="dialog" aria-labelledby="modal-reserve" aria-hidden="true">
                                     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -281,11 +279,12 @@
                                                             <span>É possível adicionar <b>blocos</b> e <b>unidades</b> neste empreendimento</span>
                                                             <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
                                                                 <li class="nav-item">
-                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="enterprise" data-toggle="tab" href="#"
-                                                                        role="tab" aria-selected="true">Empreendimento</a>
+                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="reserve" data-toggle="tab" href="#" role="tab"
+                                                                        aria-selected="true">Empreendimento</a>
                                                                 </li>
                                                                 <li class="nav-item">
-                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="block" data-toggle="tab" href="#" role="tab">Bloco</a>
+                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="proposal" data-toggle="tab" href="#"
+                                                                        role="tab">Bloco</a>
                                                                 </li>
                                                                 <li class="nav-item">
                                                                     <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="unit" data-toggle="tab" href="#" role="tab">Unidade</a>
@@ -294,7 +293,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <form class="form-enterprise">
+                                                <form class="form-reserve">
                                                     <div class="row">
                                                         <div class="col form-group">
                                                             <label for="nome-empreendimento" class="form-control-label">Nome</label>
@@ -349,8 +348,8 @@
                                 </div>
                                 <!-- ENTERPRISE -->
 
-                                <!-- BLOCKS -->
-                                <div class="modal fade" id="modal-block" tabindex="-1" role="dialog" aria-labelledby="modal-block" aria-hidden="true">
+                                <!-- PROPOSALS -->
+                                <div class="modal fade" id="modal-proposal" tabindex="-1" role="dialog" aria-labelledby="modal-proposal" aria-hidden="true">
                                     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -366,12 +365,11 @@
                                                             <span>É possível adicionar <b>Andares</b> e <b>Unidades</b> neste bloco</span>
                                                             <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
                                                                 <li class="nav-item">
-                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="block" data-toggle="tab" href="#" role="tab"
+                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="proposal" data-toggle="tab" href="#" role="tab"
                                                                         aria-selected="true">Bloco</a>
                                                                 </li>
                                                                 <li class="nav-item">
-                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="storey" data-toggle="tab" href="#"
-                                                                        role="tab">Andares</a>
+                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="sale" data-toggle="tab" href="#" role="tab">Andares</a>
                                                                 </li>
                                                                 <li class="nav-item">
                                                                     <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="unit" data-toggle="tab" href="#" role="tab">Unidade</a>
@@ -380,7 +378,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <form class="form-block">
+                                                <form class="form-proposal">
                                                     <div class="row">
                                                         <div class="col form-group">
                                                             <label for="nome-bloco" class="form-control-label">Nome</label>
@@ -396,10 +394,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- BLOCKS -->
+                                <!-- PROPOSALS -->
 
-                                <!-- STOREY -->
-                                <div class="modal fade" id="modal-storey" tabindex="-1" role="dialog" aria-labelledby="modal-storey" aria-hidden="true">
+                                <!-- SALE -->
+                                <div class="modal fade" id="modal-sale" tabindex="-1" role="dialog" aria-labelledby="modal-sale" aria-hidden="true">
                                     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -415,7 +413,7 @@
                                                             <span>É possível adicionar <b>Unidades</b> neste Andar</span>
                                                             <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
                                                                 <li class="nav-item">
-                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="storey" data-toggle="tab" href="#" role="tab"
+                                                                    <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="sale" data-toggle="tab" href="#" role="tab"
                                                                         aria-selected="true">Andares</a>
                                                                 </li>
                                                                 <li class="nav-item">
@@ -425,7 +423,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <form class="form-storey">
+                                                <form class="form-sale">
                                                     <div class="row">
                                                         <div class="col form-group">
                                                             <label for="nome-andar" class="form-control-label">Nome</label>
@@ -451,7 +449,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- STOREY -->
+                                <!-- SALE -->
 
                                 <!-- UNITS -->
                                 <div class="modal fade" id="modal-unit" tabindex="-1" role="dialog" aria-labelledby="modal-unit" aria-hidden="true">
