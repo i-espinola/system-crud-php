@@ -7,8 +7,9 @@ const path = {
     build: ['./public'],
     views: {
         src: [
-            './src/views/**/*',
-            './src/views/*'
+            // './src/views/**/*',
+            './src/views/*.php',
+            './src/views/*.html'
         ],
         build: './public'
     },
@@ -44,6 +45,12 @@ const path = {
             './src/assets/vendor/**/*'
         ],
         build: './public/assets/vendor'
+    },
+    php: {
+        src: [
+            './src/php/*.php'
+        ],
+        build: './public/assets/php'
     },
 };
 
@@ -136,11 +143,16 @@ export function vendor() {
     return gulp.src(path.vendor.src)
         .pipe(gulp.dest(path.vendor.build));
 }
+// Task Import PHP
+export function php() {
+    return gulp.src(path.php.src)
+        .pipe(gulp.dest(path.php.build));
+}
 
 // Task Clean All Build
 export const clean = () => del(['./public/*']);
 
 // Task Precompile project
-export const build = gulp.series(clean, gulp.parallel(views, styles, imgs, scripts, fonts, vendor));
+export const build = gulp.series(clean, gulp.parallel(views, styles, imgs, scripts, fonts, vendor, php));
 
 export default server;

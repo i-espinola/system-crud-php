@@ -1,0 +1,31 @@
+{
+  "ftp://agenciatakeoff.com.br:21@takeoff": {
+    "httpdocs": {
+      "test": {
+        "assets": {
+          "catalog.html": {
+            "type": "-",
+            "size": 42364,
+            "lmtime": 0,
+            "modified": false
+          },
+          "css": {},
+          "index.html": {
+            "type": "-",
+            "size": 42306,
+            "lmtime": 0,
+            "modified": false
+          },
+          "vendor": {}
+        },
+        "index.html": {
+          "type": "-",
+          "size": 42306,
+          "lmtime": 0,
+          "modified": false
+        }
+      }
+    }
+  },
+  "$version": 1
+}
