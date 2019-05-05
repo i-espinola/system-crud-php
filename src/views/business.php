@@ -15,7 +15,7 @@
     <!-- CSS -->
     <link type="text/css" href="./assets/css/core.min.css" rel="stylesheet">
     <link type="text/css" href="./assets/css/main.min.css" rel="stylesheet">
-    <link type="text/css" href="./assets/css/skin_blue.min.css" rel="stylesheet">
+    <link type="text/css" href="./assets/css/skin_orange.min.css" rel="stylesheet">
 
     <!-- PHP -->
     <?php
