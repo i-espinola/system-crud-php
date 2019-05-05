@@ -1,0 +1,20 @@
+{
+    "host": "agenciatakeoff.com.br",
+    "username": "takeoff",
+    "password": "FoxTrot#%35",
+    "remotePath": "/httpdocs/test",
+    "protocol": "ftp",
+    "port": 21,
+    "fileNameEncoding": "utf8",
+    "ignoreRemoteModification": true,
+    "localBasePath": "./public/",
+    "autoUpload": true,
+    "autoDelete": false,
+    "autoDownload": false,
+    "ignore": [
+        ".git",
+        "/src",
+        "/node_modules",
+        "/.vscode"
+    ]
+}

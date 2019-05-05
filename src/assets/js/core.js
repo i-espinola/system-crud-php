@@ -33,6 +33,8 @@ var Datepicker = (function () {
 
 	function init($this) {
 		var options = {
+			format: 'dd/mm/yyyy',
+			language: 'pt-BR',
 			disableTouchKeyboard: true,
 			autoclose: false
 		};
