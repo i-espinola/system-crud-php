@@ -8,24 +8,24 @@
 #### O sistema deve poder realizar as seguintes funcionalidades
 
 - [ ] Cadastrar / Editar / Excluir um cliente
-- [ ] Cadastrar / Editar / Excluir um  empreendimento
-- [ ] Cadastrar / Editar / Excluir um bloco
-- [ ] Cadastrar / Editar / Excluir um andar
-- [ ] Cadastrar / Editar / Excluir uma unidade
+- [X] Cadastrar / Editar / Excluir um  empreendimento
+- [X] Cadastrar / Editar / Excluir um bloco
+- [X] Cadastrar / Editar / Excluir um andar
+- [X] Cadastrar / Editar / Excluir uma unidade
 - [ ] Cadastrar / Editar / Excluir / Cancelar uma reserva
 - [ ] Cadastrar / Editar / Excluir / Cancelar uma proposta
 - [ ] Cadastrar / Editar / Excluir / Cancelar uma venda
-- [ ] Listar empreendimentos
-- [ ] Listar unidades de um empreendimento organizadas por bloco/andar se existirem
+- [X] Listar empreendimentos
+- [X] Listar unidades de um empreendimento organizadas por bloco/andar se existirem
 - [ ] Lista de Reservas
 - [ ] Lista de propostas
 - [ ] Lista de vendas
 - [ ] Regra de unidades
-- [ ] Alterar status de unidade
-- [ ] Empreendimento => Pode possuir blocos e/ ou unidades
-- [ ] Blocos => Pode possuir andares e/ou unidades
-- [ ] Andares/Pavimentos => Pode possuir unidades
-- [ ] Somente as unidades podem sofrer ações de reserva/proposta/venda.
+- [X] Alterar status de unidade
+- [X] Empreendimento => Pode possuir blocos e/ ou unidades
+- [X] Blocos => Pode possuir andares e/ou unidades
+- [X] Andares/Pavimentos => Pode possuir unidades
+- [X] Somente as unidades podem sofrer ações de reserva/proposta/venda.
 
 Uma unidade pode ter os seguintes status => Disponível / indisponível / reservada / Vendida<br>
 Disponível => Pode ser reservada/vendida ou tornar indisponível para venda<br>

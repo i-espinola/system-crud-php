@@ -68,6 +68,9 @@
                         <li class="nav-item">
                             <a class="nav-link nav-link-icon" href="clients.html"><span class="nav-link-inner--text">Clientes</span></a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-icon" href="index.html"><i class="fas fa-home"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>
