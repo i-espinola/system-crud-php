@@ -38,10 +38,9 @@ if (
     WHERE `enterprises`.`id` = '$id' LIMIT 1";
 
     $edit  = mysqli_query($connect, $sql) or die(error());
+    $connect->close();
 
     if ($edit) {
         echo "success";
     }
-
-    $connect->close();
 }

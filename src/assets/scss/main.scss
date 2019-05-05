@@ -105,91 +105,99 @@ body {
                 }
             }
         }
-    }
 
-    .tab-content {
+        .tab-content {
 
-        .card-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .icon-shape {
-                margin: 0 1.5rem;
-                cursor: pointer;
-            }
-        }
-
-        .nav-pills {
-            margin-top: 1rem;
-
-            .nav-item {
-
-                &:first-child>.nav-link {
-                    border-left: 1px solid $color-border;
-                    border-top-left-radius: 0.375rem;
-                    border-bottom-left-radius: 0.375rem;
-                }
-
-                &:last-child>.nav-link {
-                    border-top-right-radius: 0.375rem;
-                    border-bottom-right-radius: 0.375rem;
-                }
-
-                &:not(:last-child) {
-                    padding-right: 0;
-                }
-
-                .nav-link {
-                    padding: 0.75rem 1rem;
-                    font-weight: bold;
-                    font-size: 0.875rem;
-                    background-color: transparent;
-                    border: 1px solid $color-border;
-                    border-left: none;
-                    border-radius: 0;
-                    transition: all 0.15s ease;
-                }
-            }
-        }
-
-        table {
-
-
-            th:last-child {
-                text-align: center;
-                width: 1%;
-                white-space: nowrap;
-            }
-
-            .table-actions {
+            .card-top {
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                white-space: nowrap;
+                justify-content: space-between;
 
-                a {
-                    background: $color-grey;
-                    border-radius: 50%;
-                    color: $color-blank;
-                    height: 2rem;
-                    width: 2rem;
-                    margin: 0;
+                h3 {
+                    font-size: 2rem;
+                }
+
+                .icon-shape {
+                    margin: 0 1.5rem;
+                    cursor: pointer;
+                }
+            }
+
+            .nav-pills {
+                margin-top: 1rem;
+
+                .nav-item {
+
+                    &:first-child>.nav-link {
+                        border-left: 1px solid $color-border;
+                        border-top-left-radius: 0.375rem;
+                        border-bottom-left-radius: 0.375rem;
+                    }
+
+                    &:last-child>.nav-link {
+                        border-top-right-radius: 0.375rem;
+                        border-bottom-right-radius: 0.375rem;
+                    }
+
+                    &:not(:last-child) {
+                        padding-right: 0;
+                    }
+
+                    .nav-link {
+                        padding: 0.75rem 1rem;
+                        font-weight: bold;
+                        font-size: 0.875rem;
+                        background-color: transparent;
+                        border: 1px solid $color-border;
+                        border-left: none;
+                        border-radius: 0;
+                        transition: all 0.15s ease;
+                    }
+                }
+            }
+
+            table {
+
+
+                th:last-child {
+                    text-align: center;
+                    width: 1%;
+                    white-space: nowrap;
+                }
+
+                td {
+                    text-transform: capitalize;
+                }
+
+                .table-actions {
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    white-space: nowrap;
 
-                    &.btn-edit:hover {
-                        background: $bg-gradient-orange;
+                    a {
+                        background: $color-grey;
+                        border-radius: 50%;
+                        color: $color-blank;
+                        height: 2rem;
+                        width: 2rem;
+                        margin: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        &.btn-edit:hover {
+                            background: $bg-gradient-orange;
+                        }
+
+                        &.btn-del:hover {
+                            background: $bg-gradient-red;
+                        }
                     }
 
-                    &.btn-del:hover {
-                        background: $bg-gradient-red;
+                    a+a {
+                        margin: 0 0.5rem;
                     }
-                }
-
-                a+a {
-                    margin: 0 0.5rem;
                 }
             }
         }

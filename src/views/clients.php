@@ -18,9 +18,7 @@
     <link type="text/css" href="./assets/css/skin_blue.min.css" rel="stylesheet">
 
     <!-- PHP -->
-    <?php
-
-    ?>
+    <?php include("assets/php/client_list.php"); ?>
 
     <title>Koper - Painel</title>
 </head>
@@ -74,6 +72,11 @@
         </nav>
         <!-- NAV -->
 
+        <!-- HEADER -->
+        <div class="header pb-8 pt-5 pt-md-8">
+        </div>
+        <!-- HEADER -->
+
         <!-- CONTENT -->
         <div class="container mt--7">
             <div class="row">
@@ -86,7 +89,7 @@
                                 <div class="card shadow">
                                     <div class="card-top">
                                         <div class="card-header border-0">
-                                            <h3 class="mb-0">Lista de empreendimentos</h3>
+                                            <h3 class="mb-0">Lista de clientes</h3>
                                         </div>
                                         <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-client">
                                             <i class="fas fa-plus"></i>
@@ -98,22 +101,22 @@
                                                 <tr>
                                                     <th>Nome</th>
                                                     <th>CFP</th>
-                                                    <th>Data nascimento</th>
                                                     <th>Endereço</th>
+                                                    <th>Data nascimento</th>
                                                     <th>Renda</th>
                                                     <th>Ações</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $client = listEnterprises();
+                                                $client = listClients();
                                                 if ($client->num_rows > 0) {
                                                     while ($c_row = $client->fetch_assoc()) { ?>
                                                         <tr>
                                                             <td><?php echo $c_row['name']; ?></td>
                                                             <td><?php echo $c_row['cpf']; ?></td>
+                                                            <td><?php echo $c_row['address']; ?></td>
                                                             <td><?php echo $c_row['birth']; ?></td>
-                                                            <td><?php echo $c_row['address']; ?> m²</td>
                                                             <td><?php echo $c_row['income']; ?></td>
                                                             <td class="table-actions">
                                                                 <span class="d-none"><?php echo $c_row['id']; ?></span>
@@ -131,63 +134,45 @@
                             <!-- SECTION CLIENTS -->
 
                             <!-- MODALS -->
-                            <div class="moal fade" id="modal-client" tabindex="-1" role="dialog" aria-labelledby="modal-client" aria-hidden="true">
-                                <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                            <div class="modal fade" id="modal-client" tabindex="-1" role="dialog" aria-labelledby="modal-client" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title">Cadastrar empreendimento</h1>
-                                            <h1 class="modal-title d-none">Editar empreendimento</h1>
+                                            <h1 class="modal-title">Cadastrar cliente</h1>
+                                            <h1 class="modal-title d-none">Editar cliente</h1>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="row align-items-center">
-                                                <div class="col-10">
-                                                    <div class="nav-wrapper align-items-center">
-                                                        <span>É possível adicionar <b>blocos</b> e <b>unidades</b> neste empreendimento</span>
-                                                        <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
-                                                            <li class="nav-item">
-                                                                <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="client" data-toggle="tab" href="#" role="tab" aria-selected="true">Empreendimento</a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="block" data-toggle="tab" href="#" role="tab">Bloco</a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="unit" data-toggle="tab" href="#" role="tab">Unidade</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <form autocomplete="off" class="form-client" method="POST">
                                                 <div class="row">
                                                     <div class="col form-group">
-                                                        <label for="nome-client" class="form-control-label">Nome</label>
-                                                        <input class="form-control" type="text" id="nome-client">
+                                                        <label for="nome-cliente" class="form-control-label">Nome</label>
+                                                        <input class="form-control" type="text" id="nome-cliente" name="nome-cliente">
                                                     </div>
                                                     <div class="col form-group">
                                                         <label for="cpf" class="form-control-label">CPF</label>
-                                                        <input class="form-control" type="tel" maxlength="11" id="cpf">
+                                                        <input class="form-control cpf" type="tel" maxlength="11" id="cpf" name="cpf">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col form-group">
-                                                        <label for="address" class="form-control-label">Endereço</label>
-                                                        <input class="form-control" type="text" id="endereco">
+                                                        <label for="endereco" class="form-control-label">Endereço</label>
+                                                        <input class="form-control" type="text" id="endereco" name="endereco">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col form-group">
-                                                        <label for="birth" class="form-control-label">Data de nascimento</label>
+                                                        <label for="nascimento" class="form-control-label">Data de nascimento</label>
                                                         <div class="input-group">
-                                                            <input class="form-control datepicker" type="text" value="06/20/1990" id="birth">
+                                                            <input class="form-control datepicker" type="text" id="nascimento" name="nascimento">
                                                         </div>
                                                     </div>
                                                     <div class="col form-group">
-                                                        <label for="income" class="form-control-label">Renda</label>
+                                                        <label for="renda" class="form-control-label">Renda</label>
                                                         <div class="input-group ">
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text">R$</span>
                                                             </div>
-                                                            <input class="form-control" type="tel" maxlength="8" id="income">
+                                                            <input class="form-control money" type="tel" maxlength="8" id="renda" name="renda">
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">,00</span>
                                                             </div>

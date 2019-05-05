@@ -15,10 +15,9 @@ if (isset($_POST['id']) && isset($_POST['nome-andar']) && isset($_POST['posicao'
     WHERE `storeys`.`id` = '$id' LIMIT 1";
 
     $edit = mysqli_query($connect, $sql) or die(error());
+    $connect->close();
 
     if ($edit) {
         echo "success";
     }
-
-    $connect->close();
 }
