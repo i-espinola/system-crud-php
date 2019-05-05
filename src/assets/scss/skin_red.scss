@@ -1,0 +1,126 @@
+@import "custom/colors";
+
+
+body {
+
+    h1,
+    h2,
+    h3 {
+        color: $color-grey;
+    }
+
+    .header {
+        background: $bg-gradient-red;
+
+        .header-body {
+
+            .nav-wrapper {
+
+                .nav-item {
+
+                    .nav-link {
+
+                        &.active {
+                            color: $color-red;
+                            background-color: $color-blank;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .tab-content {
+
+
+        .icon-shape {
+            background: $bg-gradient-red;
+        }
+
+        .modal {
+            transition: all 0.15s ease;
+
+            .modal-content {
+
+                .modal-title {
+                    color: $color-grey;
+                }
+
+                .modal-body {
+
+                    .nav-pills {
+
+                        &.show>.nav-link {
+                            color: $color-red;
+                            background: $color-blank;
+                        }
+
+                        .nav-item {
+
+                            .nav-link {
+                                color: $color-grey;
+                                border-color: $color-border;
+
+                                &.active {
+                                    color: $color-blank;
+                                    background: $color-red;
+                                }
+                            }
+                        }
+                    }
+
+                    .input-group-prepend+.form-control {
+                        padding: 0.625em 0.75em;
+                    }
+
+                    input,
+                    select,
+                    textarea {
+                        text-transform: capitalize;
+                        font-weight: bold;
+                        box-shadow: none;
+
+                        &:focus,
+                        &.form-control:focus {
+                            border: 1px solid $color-red;
+                            box-shadow: 0px 0px 10px 5px rgba(50, 50, 93, 0.15);
+                        }
+
+                        >option {
+                            background: $color-blank;
+                            color: $color-red;
+                            font-size: 1rem;
+                        }
+
+
+                        >option {
+                            background: $color-blank;
+                            color: $color-red;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+
+            }
+
+            .btn-primary {
+                background: $color-red;
+                color: $color-blank;
+            }
+
+            .btn-outline {
+                background: transparent;
+                border: 2px solid $color-red;
+                color: $color-red;
+            }
+        }
+    }
+
+    .modal-backdrop {
+        background: $bg-gradient-red;
+
+        &.show {
+            opacity: 0.85;
+        }
+    }
+}

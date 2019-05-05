@@ -10216,6 +10216,105 @@ a.btn-icon-only {
     .show > .btn-github.dropdown-toggle:focus {
       box-shadow: none, 0 0 0 0 rgba(34, 34, 34, 0.5); }
 
+.bg-gradient-purple {
+  background: linear-gradient(0deg, #5e72e4 0, #825ee4 100%); }
+
+.bg-gradient-blue {
+  background: linear-gradient(0deg, #11cdef 0, #1171ef 100%); }
+
+.bg-gradient-green {
+  background: linear-gradient(0deg, #2dce89 0, #2dcecc 100%); }
+
+.bg-gradient-orange {
+  background: linear-gradient(87deg, #fb6340 0, #fbb140 100%) !important; }
+
+.bg-gradient-red {
+  background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important; }
+
+.color-purple {
+  background: #825ee4; }
+
+.color-blue {
+  background: #1171ef; }
+
+.color-green {
+  background: #2dce89; }
+
+.color-orange {
+  background: #fb6340; }
+
+.color-red {
+  background: #f5365c; }
+
+.color-grey {
+  background: #8d8d8d; }
+
+.text-purple {
+  color: #825ee4; }
+
+.text-blue {
+  color: #1171ef; }
+
+.text-green {
+  color: #2dce89; }
+
+.text-orange {
+  color: #fb6340; }
+
+.text-red {
+  color: #f5365c; }
+
+.text-grey {
+  color: #8d8d8d; }
+
+button {
+  outline: none;
+  border: none; }
+  button.btn-purple {
+    background: linear-gradient(0deg, #5e72e4 0, #825ee4 100%);
+    color: #fff; }
+  button.btn-blue {
+    background: linear-gradient(0deg, #11cdef 0, #1171ef 100%);
+    color: #fff; }
+  button.btn-green {
+    background: linear-gradient(0deg, #2dce89 0, #2dcecc 100%);
+    color: #fff; }
+  button.btn-orange {
+    background: linear-gradient(0deg, #2dce89 0, #2dcecc 100%);
+    color: #fff; }
+  button.btn-red {
+    background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important;
+    color: #fff; }
+  button.btn-grey {
+    background: #8d8d8d;
+    color: #fff; }
+  button.btn-outline-purple {
+    background: transparent;
+    color: #825ee4;
+    border: 1px solid #825ee4; }
+  button.btn-outline-blue {
+    background: transparent;
+    color: #1171ef;
+    border: 1px solid #1171ef; }
+  button.btn-outline-green {
+    background: transparent;
+    color: #2dce89;
+    border: 1px solid #2dce89; }
+  button.btn-outline-orange {
+    background: transparent;
+    color: #fb6340;
+    border: 1px solid #fb6340; }
+  button.btn-outline-red {
+    background: transparent;
+    color: #f5365c;
+    border: 1px solid #f5365c; }
+  button.btn-outline-grey {
+    background: transparent;
+    color: #8d8d8d;
+    border: 1px solid #8d8d8d; }
+  button.btn-link {
+    color: #8d8d8d; }
+
 .card-translucent {
   background-color: rgba(18, 91, 152, 0.08); }
 
