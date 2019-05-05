@@ -1,33 +1,16 @@
-$bg-gradient-one: linear-gradient(0deg, #11cdef 0, #1171ef 100%);
-$bg-gradient-two: linear-gradient(0deg, #5e72e4 0, #825ee4 100%);
-$bg-gradient-tree: linear-gradient(0deg, #2dce89 0, #2dcecc 100%);
-$color-one: #1171ef;
-$color-two: #11cdef;
-$color-tree: #2dcecc;
-$color-neutral: #4c5254;
-
+@import "custom/colors";
 
 body {
     background-color: #e3e3e3;
-    color: $color-neutral;
+    color: $color-grey;
 
-    .bg-gradient-primary {
-        background: $bg-gradient-one !important;
-    }
-
-    .text-primary {
-        color: $color-one;
-    }
-
-    .color-primary {
-        background: $color-one;
-    }
-
-    .color-secundary {
-        color: $color-two;
-    }
 
     .main-content {
+
+        button {
+            outline: none;
+            border: none;
+        }
 
         .align-items-center {
             align-items: center;
@@ -36,14 +19,14 @@ body {
         }
 
         .navbar-top {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid $color-blank;
         }
 
         .navbar-nav {
 
             .active>.nav-link span {
                 font-weight: bold;
-                color: #fff;
+                color: $color-blank;
             }
         }
 
@@ -57,14 +40,14 @@ body {
             .nav-pills {
 
                 &.show>.nav-link {
-                    color: $color-one;
-                    background-color: #ffffff;
+                    color: $color-blue;
+                    background-color: $color-blank;
                 }
 
                 .nav-item {
 
                     &:first-child>.nav-link {
-                        border-left: 1px solid #fff;
+                        border-left: 1px solid $color-blank;
                         border-top-left-radius: 0.375rem;
                         border-bottom-left-radius: 0.375rem;
                     }
@@ -80,164 +63,133 @@ body {
 
                     .nav-link {
                         padding: 0.75rem 1rem;
-                        color: #fff;
+                        color: $color-blank;
                         font-weight: bold;
                         font-size: 0.875rem;
                         background-color: transparent;
-                        border: 1px solid #fff;
+                        border: 1px solid $color-blank;
                         border-left: none;
                         border-radius: 0;
                         transition: all 0.15s ease;
-
-                        &.active {
-                            color: $color-neutral;
-                            background-color: #ffffff;
-                        }
                     }
                 }
             }
         }
 
-        button {
-            outline: none;
-            border: none;
-
-            &.btn-primary {
-                background: $color-one;
-                color: #fff;
-            }
-
-            &.btn-secundary {
-                background: $color-two;
-                color: #fff;
-            }
-
-            &.btn-outline-primary {
-                background: transparent;
-                color: $color-neutral;
-                border: 1px solid $color-neutral;
-            }
-
-            &.btn-outline-neutral {
-                background: transparent;
-                color: $color-neutral;
-                border: 1px solid $color-neutral;
-            }
-
-            &.btn-link {
-                color: $color-neutral;
-            }
-        }
-
-
         .modal {
             transition: all 0.15s ease;
-            background: $bg-gradient-one;
 
             .modal-dialog {
                 max-width: 60rem;
 
+                .modal-header {
+                    display: block;
+                    text-align: center;
+                }
+
                 .modal-body {
                     padding: 1.5rem 1.5rem 0;
 
-                    .form-control,
-                    .input-group-text,
-                    .input-group-alternative {
-                        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
-                        border: 1px solid rgba(76, 82, 84, 0.5);
+                    label {
+                        color: $color-grey;
+                    }
+
+                    .form-group {
+
+                        .form-control,
+                        .input-group-text,
+                        .input-group-alternative {
+                            border: 1px solid $color-border;
+                        }
                     }
                 }
             }
         }
+    }
 
-        .tab-content {
+    .tab-content {
 
-            .card-top {
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .icon-shape {
+                margin: 0 1.5rem;
+                cursor: pointer;
+            }
+        }
+
+        .nav-pills {
+            margin-top: 1rem;
+
+            .nav-item {
+
+                &:first-child>.nav-link {
+                    border-left: 1px solid $color-border;
+                    border-top-left-radius: 0.375rem;
+                    border-bottom-left-radius: 0.375rem;
+                }
+
+                &:last-child>.nav-link {
+                    border-top-right-radius: 0.375rem;
+                    border-bottom-right-radius: 0.375rem;
+                }
+
+                &:not(:last-child) {
+                    padding-right: 0;
+                }
+
+                .nav-link {
+                    padding: 0.75rem 1rem;
+                    font-weight: bold;
+                    font-size: 0.875rem;
+                    background-color: transparent;
+                    border: 1px solid $color-border;
+                    border-left: none;
+                    border-radius: 0;
+                    transition: all 0.15s ease;
+                }
+            }
+        }
+
+        table {
+
+
+            th:last-child {
+                text-align: center;
+                width: 1%;
+                white-space: nowrap;
+            }
+
+            .table-actions {
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: center;
+                white-space: nowrap;
 
-                h3 {
-                    color: $color-neutral;
-                }
-
-                .icon-shape {
-                    margin: 0 1.5rem;
-                    background: $color-tree;
-                    cursor: pointer;
-                }
-            }
-
-            .nav-pills {
-                margin-top: 1rem;
-
-                &.show>.nav-link {
-                    color: $color-neutral;
-                    background-color: #ffffff;
-                }
-
-                .nav-item {
-
-                    &:first-child>.nav-link {
-                        border-left: 1px solid $color-neutral;
-                        border-top-left-radius: 0.375rem;
-                        border-bottom-left-radius: 0.375rem;
-                    }
-
-                    &:last-child>.nav-link {
-                        border-top-right-radius: 0.375rem;
-                        border-bottom-right-radius: 0.375rem;
-                    }
-
-                    &:not(:last-child) {
-                        padding-right: 0;
-                    }
-
-                    .nav-link {
-                        padding: 0.75rem 1rem;
-                        color: $color-neutral;
-                        font-weight: bold;
-                        font-size: 0.875rem;
-                        background-color: transparent;
-                        border: 1px solid $color-neutral;
-                        border-left: none;
-                        border-radius: 0;
-                        transition: all 0.15s ease;
-
-                        &.active {
-                            color: #fff;
-                            background-color: $color-neutral;
-                        }
-                    }
-                }
-            }
-
-            table {
-
-                th:last-child {
-                    text-align: center;
-                    width: 1%;
-                    white-space: nowrap;
-                }
-
-                .table-actions {
+                a {
+                    background: $color-grey;
+                    border-radius: 50%;
+                    color: $color-blank;
+                    height: 2rem;
+                    width: 2rem;
+                    margin: 0;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    white-space: nowrap;
 
-                    a {
-                        padding: 0;
-                        margin: 0.25rem 0.75rem;
-
-                        &:first-child>:hover {
-                            color: orange;
-                        }
-
-                        &:last-child>:hover {
-                            color: red;
-                        }
+                    &.btn-edit:hover {
+                        background: $bg-gradient-orange;
                     }
+
+                    &.btn-del:hover {
+                        background: $bg-gradient-red;
+                    }
+                }
+
+                a+a {
+                    margin: 0 0.5rem;
                 }
             }
         }

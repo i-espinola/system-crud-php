@@ -5,3 +5,79 @@
 @import "../core/buttons/button";
 @import "../core/buttons/button-icon";
 @import "../core/buttons/button-brand";
+@import "colors";
+
+button {
+    outline: none;
+    border: none;
+
+    &.btn-purple {
+        background: $bg-gradient-purple;
+        color: #fff;
+    }
+
+    &.btn-blue {
+        background: $bg-gradient-blue;
+        color: #fff;
+    }
+
+    &.btn-green {
+        background: $bg-gradient-green;
+        color: #fff;
+    }
+
+    &.btn-orange {
+        background: $bg-gradient-green;
+        color: #fff;
+    }
+
+    &.btn-red {
+        background: $bg-gradient-red;
+        color: #fff;
+    }
+
+    &.btn-grey {
+        background: $color-grey;
+        color: #fff;
+    }
+
+    &.btn-outline-purple {
+        background: transparent;
+        color: $color-purple;
+        border: 1px solid $color-purple;
+    }
+
+    &.btn-outline-blue {
+        background: transparent;
+        color: $color-blue;
+        border: 1px solid $color-blue;
+    }
+
+    &.btn-outline-green {
+        background: transparent;
+        color: $color-green;
+        border: 1px solid $color-green;
+    }
+
+    &.btn-outline-orange {
+        background: transparent;
+        color: $color-orange;
+        border: 1px solid $color-orange;
+    }
+
+    &.btn-outline-red {
+        background: transparent;
+        color: $color-red;
+        border: 1px solid $color-red;
+    }
+
+    &.btn-outline-grey {
+        background: transparent;
+        color: $color-grey;
+        border: 1px solid $color-grey;
+    }
+
+    &.btn-link {
+        color: $color-grey;
+    }
+}

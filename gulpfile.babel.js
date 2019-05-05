@@ -7,8 +7,9 @@ const path = {
     build: ['./public'],
     views: {
         src: [
-            './src/views/**/*',
-            './src/views/*'
+            // './src/views/**/*',
+            './src/views/*.php',
+            './src/views/*.html'
         ],
         build: './public'
     },
@@ -45,6 +46,12 @@ const path = {
         ],
         build: './public/assets/vendor'
     },
+    php: {
+        src: [
+            './src/php/*'
+        ],
+        build: './public/assets/php'
+    },
 };
 
 // ------------------------
@@ -76,6 +83,7 @@ export function server() {
     gulp.watch(path.scripts.src).on("change", gulp.parallel(scripts, browserSync.reload));
     gulp.watch(path.img.src).on("change", gulp.parallel(imgs, browserSync.reload));
     gulp.watch(path.vendor.src).on("change", gulp.parallel(vendor, browserSync.reload));
+    gulp.watch(path.php.src).on("change", gulp.parallel(php, browserSync.reload));
 }
 
 // Task View
@@ -136,11 +144,16 @@ export function vendor() {
     return gulp.src(path.vendor.src)
         .pipe(gulp.dest(path.vendor.build));
 }
+// Task Import PHP
+export function php() {
+    return gulp.src(path.php.src)
+        .pipe(gulp.dest(path.php.build));
+}
 
 // Task Clean All Build
 export const clean = () => del(['./public/*']);
 
 // Task Precompile project
-export const build = gulp.series(clean, gulp.parallel(views, styles, imgs, scripts, fonts, vendor));
+export const build = gulp.series(clean, gulp.parallel(views, styles, imgs, scripts, fonts, vendor, php));
 
 export default server;
