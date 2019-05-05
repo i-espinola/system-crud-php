@@ -5,7 +5,7 @@ include("config.php");
 $id = $_POST['id'];
 
 $connect = mysqli_connect($host, $user, $pass, $base);
-$sql   = "DELETE FROM `takeoff1_test`.`units` WHERE `id` = '$id' LIMIT 1";
+$sql   = "DELETE FROM `takeoff1_test`.`clients` WHERE `id` = '$id' LIMIT 1";
 $del = $connect->query($sql);
 $connect->close();
 

@@ -11,9 +11,9 @@ if (isset($_POST['nome-andar']) && isset($_POST['posicao']) && $_POST['nome-anda
     $sql   = "INSERT  INTO `takeoff1_test`.`storeys` (`name`, `position`) VALUE ('" . $nome_bloco . "', '" . $posicao . "');";
 
     $push  = mysqli_query($connect, $sql) or die(error());
+    $connect->close();
 
     if ($push) {
         echo "success";
     }
-    $connect->close();
 }

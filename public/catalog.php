@@ -63,10 +63,10 @@
                             <a class="nav-link nav-link-icon" href="#"><span class="nav-link-inner--text">Catalogo</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-icon" href="business.html"><span class="nav-link-inner--text">Comercial</span></a>
+                            <a class="nav-link nav-link-icon" href="business.php"><span class="nav-link-inner--text">Comercial</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-icon" href="clients.html"><span class="nav-link-inner--text">Clientes</span></a>
+                            <a class="nav-link nav-link-icon" href="clients.php"><span class="nav-link-inner--text">Clientes</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-link-icon" href="index.html"><i class="fas fa-home"></i></a>
@@ -305,7 +305,7 @@
 
                             <!-- ENTERPRISE -->
                             <div class="modal fade" id="modal-enterprise" tabindex="-1" role="dialog" aria-labelledby="modal-enterprise" aria-hidden="true">
-                                <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h1 class="modal-title">Cadastrar empreendimento</h1>
@@ -364,13 +364,13 @@
                                                     <div class="col form-group">
                                                         <label for="inicio" class="form-control-label">Data de início</label>
                                                         <div class="input-group">
-                                                            <input class="form-control" placeholder="Inicio" type="text" id="inicio" name="inicio">
+                                                            <input class="form-control data" placeholder="Inicio" type="text" id="inicio" name="inicio">
                                                         </div>
                                                     </div>
                                                     <div class="col form-group">
                                                         <label for="conclusao" class="form-control-label">Data de conclusão</label>
                                                         <div class="input-group">
-                                                            <input class="form-control" placeholder="Conclusão" type="text" id="conclusao" name="conclusao">
+                                                            <input class="form-control data" placeholder="Conclusão" type="text" id="conclusao" name="conclusao">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -388,7 +388,7 @@
 
                             <!-- BLOCKS -->
                             <div class="modal fade" id="modal-block" tabindex="-1" role="dialog" aria-labelledby="modal-block" aria-hidden="true">
-                                <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h1 class="modal-title">Cadastrar bloco</h1>
@@ -434,7 +434,7 @@
 
                             <!-- STOREY -->
                             <div class="modal fade" id="modal-storey" tabindex="-1" role="dialog" aria-labelledby="modal-storey" aria-hidden="true">
-                                <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h1 class="modal-title">Cadastrar andar</h1>
@@ -487,7 +487,7 @@
 
                             <!-- UNITS -->
                             <div class="modal fade" id="modal-unit" tabindex="-1" role="dialog" aria-labelledby="modal-unit" aria-hidden="true">
-                                <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h1 class="modal-title">Cadastrar unidade</h1>

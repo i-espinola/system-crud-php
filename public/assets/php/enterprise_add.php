@@ -43,10 +43,9 @@ if (
     );";
 
     $push  = mysqli_query($connect, $sql) or die(error());
+    $connect->close();
 
     if ($push) {
         echo "success";
     }
-
-    $connect->close();
 }
