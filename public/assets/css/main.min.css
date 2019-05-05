@@ -1,30 +1,76 @@
+.bg-gradient-purple {
+  background: linear-gradient(0deg, #5e72e4 0, #825ee4 100%); }
+
+.bg-gradient-blue {
+  background: linear-gradient(0deg, #11cdef 0, #1171ef 100%); }
+
+.bg-gradient-green {
+  background: linear-gradient(0deg, #2dce89 0, #2dcecc 100%); }
+
+.bg-gradient-orange {
+  background: linear-gradient(87deg, #fb6340 0, #fbb140 100%) !important; }
+
+.bg-gradient-red {
+  background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important; }
+
+.color-purple {
+  background: #825ee4; }
+
+.color-blue {
+  background: #1171ef; }
+
+.color-green {
+  background: #2dce89; }
+
+.color-orange {
+  background: #fb6340; }
+
+.color-red {
+  background: #f5365c; }
+
+.color-grey {
+  background: #8d8d8d; }
+
+.text-purple {
+  color: #825ee4; }
+
+.text-blue {
+  color: #1171ef; }
+
+.text-green {
+  color: #2dce89; }
+
+.text-orange {
+  color: #fb6340; }
+
+.text-red {
+  color: #f5365c; }
+
+.text-grey {
+  color: #8d8d8d; }
+
 body {
   background-color: #e3e3e3;
-  color: #4c5254; }
-  body .bg-gradient-primary {
-    background: linear-gradient(0deg, #11cdef 0, #1171ef 100%) !important; }
-  body .text-primary {
-    color: #1171ef; }
-  body .color-primary {
-    background: #1171ef; }
-  body .color-secundary {
-    color: #11cdef; }
+  color: #8d8d8d; }
+  body .main-content button {
+    outline: none;
+    border: none; }
   body .main-content .align-items-center {
     align-items: center;
     justify-content: center;
     text-align: center; }
   body .main-content .navbar-top {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+    border-bottom: 1px solid #ffffff; }
   body .main-content .navbar-nav .active > .nav-link span {
     font-weight: bold;
-    color: #fff; }
+    color: #ffffff; }
   body .main-content .navbar-collapse .collapse-brand img {
     filter: invert(1); }
   body .main-content .header .nav-pills.show > .nav-link {
     color: #1171ef;
     background-color: #ffffff; }
   body .main-content .header .nav-pills .nav-item:first-child > .nav-link {
-    border-left: 1px solid #fff;
+    border-left: 1px solid #ffffff;
     border-top-left-radius: 0.375rem;
     border-bottom-left-radius: 0.375rem; }
   body .main-content .header .nav-pills .nav-item:last-child > .nav-link {
@@ -34,98 +80,78 @@ body {
     padding-right: 0; }
   body .main-content .header .nav-pills .nav-item .nav-link {
     padding: 0.75rem 1rem;
-    color: #fff;
+    color: #ffffff;
     font-weight: bold;
     font-size: 0.875rem;
     background-color: transparent;
-    border: 1px solid #fff;
+    border: 1px solid #ffffff;
     border-left: none;
     border-radius: 0;
     transition: all 0.15s ease; }
-    body .main-content .header .nav-pills .nav-item .nav-link.active {
-      color: #4c5254;
-      background-color: #ffffff; }
-  body .main-content button {
-    outline: none;
-    border: none; }
-    body .main-content button.btn-primary {
-      background: #1171ef;
-      color: #fff; }
-    body .main-content button.btn-secundary {
-      background: #11cdef;
-      color: #fff; }
-    body .main-content button.btn-outline-primary {
-      background: transparent;
-      color: #4c5254;
-      border: 1px solid #4c5254; }
-    body .main-content button.btn-outline-neutral {
-      background: transparent;
-      color: #4c5254;
-      border: 1px solid #4c5254; }
-    body .main-content button.btn-link {
-      color: #4c5254; }
   body .main-content .modal {
-    transition: all 0.15s ease;
-    background: linear-gradient(0deg, #11cdef 0, #1171ef 100%); }
+    transition: all 0.15s ease; }
     body .main-content .modal .modal-dialog {
       max-width: 60rem; }
+      body .main-content .modal .modal-dialog .modal-header {
+        display: block;
+        text-align: center; }
       body .main-content .modal .modal-dialog .modal-body {
         padding: 1.5rem 1.5rem 0; }
-        body .main-content .modal .modal-dialog .modal-body .form-control,
-        body .main-content .modal .modal-dialog .modal-body .input-group-text,
-        body .main-content .modal .modal-dialog .modal-body .input-group-alternative {
-          box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
-          border: 1px solid rgba(76, 82, 84, 0.5); }
-  body .main-content .tab-content .card-top {
+        body .main-content .modal .modal-dialog .modal-body label {
+          color: #8d8d8d; }
+        body .main-content .modal .modal-dialog .modal-body .form-group .form-control,
+        body .main-content .modal .modal-dialog .modal-body .form-group .input-group-text,
+        body .main-content .modal .modal-dialog .modal-body .form-group .input-group-alternative {
+          border: 1px solid #c4c9cb; }
+  body .tab-content .card-top {
     display: flex;
     align-items: center;
     justify-content: space-between; }
-    body .main-content .tab-content .card-top h3 {
-      color: #4c5254; }
-    body .main-content .tab-content .card-top .icon-shape {
+    body .tab-content .card-top .icon-shape {
       margin: 0 1.5rem;
-      background: #2dcecc;
       cursor: pointer; }
-  body .main-content .tab-content .nav-pills {
+  body .tab-content .nav-pills {
     margin-top: 1rem; }
-    body .main-content .tab-content .nav-pills.show > .nav-link {
-      color: #4c5254;
-      background-color: #ffffff; }
-    body .main-content .tab-content .nav-pills .nav-item:first-child > .nav-link {
-      border-left: 1px solid #4c5254;
+    body .tab-content .nav-pills .nav-item:first-child > .nav-link {
+      border-left: 1px solid #c4c9cb;
       border-top-left-radius: 0.375rem;
       border-bottom-left-radius: 0.375rem; }
-    body .main-content .tab-content .nav-pills .nav-item:last-child > .nav-link {
+    body .tab-content .nav-pills .nav-item:last-child > .nav-link {
       border-top-right-radius: 0.375rem;
       border-bottom-right-radius: 0.375rem; }
-    body .main-content .tab-content .nav-pills .nav-item:not(:last-child) {
+    body .tab-content .nav-pills .nav-item:not(:last-child) {
       padding-right: 0; }
-    body .main-content .tab-content .nav-pills .nav-item .nav-link {
+    body .tab-content .nav-pills .nav-item .nav-link {
       padding: 0.75rem 1rem;
-      color: #4c5254;
       font-weight: bold;
       font-size: 0.875rem;
       background-color: transparent;
-      border: 1px solid #4c5254;
+      border: 1px solid #c4c9cb;
       border-left: none;
       border-radius: 0;
       transition: all 0.15s ease; }
-      body .main-content .tab-content .nav-pills .nav-item .nav-link.active {
-        color: #fff;
-        background-color: #4c5254; }
-  body .main-content .tab-content table th:last-child {
+  body .tab-content table th:last-child {
     text-align: center;
     width: 1%;
     white-space: nowrap; }
-  body .main-content .tab-content table .table-actions {
+  body .tab-content table .table-actions {
     display: flex;
     align-items: center;
     justify-content: center;
     white-space: nowrap; }
-    body .main-content .tab-content table .table-actions a {
-      padding: 0;
-      margin: 0.25rem 0.75rem; }
-      body .main-content .tab-content table .table-actions a:first-child > :hover {
-        color: orange; }
-      body .main-content .tab-content table .table-actions a:last-child > :hover {
-        color: red; }
+    body .tab-content table .table-actions a {
+      background: #8d8d8d;
+      border-radius: 50%;
+      color: #ffffff;
+      height: 2rem;
+      width: 2rem;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      body .tab-content table .table-actions a.btn-edit:hover {
+        background: linear-gradient(87deg, #fb6340 0, #fbb140 100%) !important; }
+      body .tab-content table .table-actions a.btn-del:hover {
+        background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important; }
+    body .tab-content table .table-actions a + a {
+      margin: 0 0.5rem; }

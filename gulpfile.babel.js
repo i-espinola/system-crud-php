@@ -48,7 +48,7 @@ const path = {
     },
     php: {
         src: [
-            './src/php/*.php'
+            './src/php/*'
         ],
         build: './public/assets/php'
     },

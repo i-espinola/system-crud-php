@@ -6,12 +6,15 @@
     "protocol": "ftp",
     "port": 21,
     "fileNameEncoding": "utf8",
+    "ignoreRemoteModification": true,
+    "localBasePath": "./public/",
     "autoUpload": true,
     "autoDelete": false,
     "autoDownload": false,
-    "localBasePath": "./public/",
     "ignore": [
         ".git",
+        "/src",
+        "/node_modules",
         "/.vscode"
     ]
 }
