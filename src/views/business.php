@@ -15,11 +15,13 @@
     <!-- CSS -->
     <link type="text/css" href="./assets/css/core.min.css" rel="stylesheet">
     <link type="text/css" href="./assets/css/main.min.css" rel="stylesheet">
-    <link type="text/css" href="./assets/css/skin_orange.min.css" rel="stylesheet">
+    <link type="text/css" href="./assets/css/skin_blue.min.css" rel="stylesheet">
 
     <!-- PHP -->
     <?php
-
+    include("assets/php/reservation_list.php");
+    include("assets/php/proposal_list.php");
+    include("assets/php/sale_list.php");
     ?>
 
     <title>Koper - Painel</title>
@@ -66,13 +68,39 @@
                             <a class="nav-link nav-link-icon" href="clients.php"><span class="nav-link-inner--text">Clientes</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-icon" href="index.html"><i class="fas fa-home"></i></a>
+                            <a class="nav-link nav-link-icon" href="index.php"><i class="fas fa-home"></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- NAV -->
+
+        <!-- HEADER -->
+        <div class="header pb-8 pt-5 pt-md-8">
+            <div class="container align-items-center">
+                <div class="header-body">
+                    <div class="row align-items-center">
+                        <div class="col-xl-10">
+                            <div class="nav-wrapper">
+                                <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link mb-sm-3 mb-md-0 active" id="reservation-tab" data-toggle="tab" href="#reservation" role="tab" aria-controls="reservation" aria-selected="true">Reservas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link mb-sm-3 mb-md-0" id="proposal-tab" data-toggle="tab" href="#proposal" role="tab" aria-controls="proposal" aria-selected="false">Propostas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link mb-sm-3 mb-md-0" id="sale-tab" data-toggle="tab" href="#sale" role="tab" aria-controls="sale" aria-selected="false">Vendas</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- HEADER -->
 
         <!-- CONTENT -->
         <div class="container mt--7">
@@ -81,18 +109,344 @@
                     <div class="card shadow">
                         <div class="tab-content">
 
-                            <!-- SECTION CLIENTS -->
-                            <!-- SECTION CLIENTS -->
+                            <!-- SECTION RESERVATIONS -->
+                            <div class="tab-pane fade show active" id="reservation" role="tabpanel" aria-labelledby="reservation-tab">
+                                <div class="card shadow">
+                                    <div class="card-top">
+                                        <div class="card-header border-0">
+                                            <h3 class="mb-0">Lista de reservas</h3>
+                                        </div>
+                                        <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-reservation">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-flush">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>Código</th>
+                                                    <th>Nome</th>
+                                                    <th>Data</th>
+                                                    <th>ID unidade</th>
+                                                    <th>ID cliente</th>
+                                                    <th>Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $reservation = listReservations();
+                                                if ($reservation->num_rows > 0) {
+                                                    while ($r_row = $reservation->fetch_assoc()) { ?>
+                                                        <tr>
+                                                            <td><?php echo $r_row['id']; ?></td>
+                                                            <td><?php echo $r_row['name']; ?></td>
+                                                            <td><?php echo $r_row['date']; ?></td>
+                                                            <td><?php echo $r_row['id_unit']; ?></td>
+                                                            <td><?php echo $r_row['id_client']; ?></td>
+                                                            <td class="table-actions">
+                                                                <span class="d-none"><?php echo $r_row['id']; ?></span>
+                                                                <a href="javascript:void(0)" onclick="modalEdit(this)" class="nav-link nav-link-icon btn-edit" data-toggle="tooltip" data-original-title="Editar"><i class="far fa-edit"></i></a>
+                                                                <a href="javascript:void(0)" onclick="del(this)" class="nav-link nav-link-icon btn-del" data-toggle="tooltip" data-original-title="Apagar"><i class="fas fa-trash"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SECTION RESERVATIONS -->
+
+                            <!-- SECTION PROPOSAL -->
+                            <div class="tab-pane fade" id="proposal" role="tabpanel" aria-labelledby="proposal-tab">
+                                <div class="card shadow">
+                                    <div class="card-top">
+                                        <div class="card-header border-0">
+                                            <h3 class="mb-0">Lista de Propostas</h3>
+                                        </div>
+                                        <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-proposal">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-flush">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>Código</th>
+                                                    <th>Nome</th>
+                                                    <th>Data</th>
+                                                    <th>Forma de pagamento</th>
+                                                    <th>Código reserva</th>
+                                                    <th>Código cliente</th>
+                                                    <th>Código Unidade</th>
+                                                    <th>Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $proposal = listProposals();
+                                                if ($proposal->num_rows > 0) {
+                                                    while ($p_row = $proposal->fetch_assoc()) { ?>
+                                                        <tr>
+                                                            <td><?php echo $p_row['id']; ?></td>
+                                                            <td><?php echo $p_row['name']; ?></td>
+                                                            <td><?php echo $p_row['date']; ?></td>
+                                                            <td><?php echo $p_row['payment']; ?></td>
+                                                            <td><?php echo $p_row['id_reservation']; ?></td>
+                                                            <td><?php echo $p_row['id_client']; ?></td>
+                                                            <td><?php echo $p_row['id_unit']; ?></td>
+                                                            <td class="table-actions">
+                                                                <span class="d-none"><?php echo $p_row['id']; ?></span>
+                                                                <a href="javascript:void(0)" onclick="modalEdit(this)" class="nav-link nav-link-icon btn-edit" data-toggle="tooltip" data-original-title="Editar"><i class="far fa-edit"></i></a>
+                                                                <a href="javascript:void(0)" onclick="del(this)" class="nav-link nav-link-icon btn-del" data-toggle="tooltip" data-original-title="Apagar"><i class="fas fa-trash"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SECTION PROPOSAL -->
+
+                            <!-- SECTION SALE -->
+                            <div class="tab-pane fade" id="sale" role="tabpanel" aria-labelledby="sale-tab">
+                                <div class="card shadow">
+                                    <div class="card-top">
+                                        <div class="card-header border-0">
+                                            <h3 class="mb-0">Lista de Vendas</h3>
+                                        </div>
+                                        <button class="icon icon-shape text-white rounded-circle shadow" data-toggle="modal" data-target="#modal-sale">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-flush">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>Código</th>
+                                                    <th>Nome</th>
+                                                    <th>Data</th>
+                                                    <th>Código cliente</th>
+                                                    <th>Código unidade</th>
+                                                    <th>Valor unidade</th>
+                                                    <th>Valor total</th>
+                                                    <th>Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $sales = listSales();
+                                                if ($sales->num_rows > 0) {
+                                                    while ($s_row = $sales->fetch_assoc()) { ?>
+                                                        <tr>
+                                                            <td><?php echo $s_row['id']; ?></td>
+                                                            <td><?php echo $s_row['name']; ?></td>
+                                                            <td><?php echo $s_row['date']; ?></td>
+                                                            <td><?php echo $s_row['id_client']; ?></td>
+                                                            <td><?php echo $s_row['id_unit']; ?></td>
+                                                            <td><?php echo $s_row['unit_value']; ?></td>
+                                                            <td><?php echo $s_row['full_value']; ?></td>
+                                                            <td class="table-actions">
+                                                                <span class="d-none"><?php echo $s_row['id']; ?></span>
+                                                                <a href="javascript:void(0)" onclick="modalEdit(this)" class="nav-link nav-link-icon btn-edit" data-toggle="tooltip" data-original-title="Editar"><i class="far fa-edit"></i></a>
+                                                                <a href="javascript:void(0)" onclick="del(this)" class="nav-link nav-link-icon btn-del" data-toggle="tooltip" data-original-title="Apagar"><i class="fas fa-trash"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SECTION SALE -->
 
                             <!-- MODALS -->
+
+                            <!-- RESERVATION -->
+                            <div class="modal fade" id="modal-reservation" tabindex="-1" role="dialog" aria-labelledby="modal-reservation" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Cadastrar reserva</h1>
+                                            <h1 class="modal-title d-none">Editar reserva</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form autocomplete="off" id="form-reservation" method="POST">
+                                                <div class="row">
+                                                    <div class="col form-group">
+                                                        <label for="nome-reserva" class="form-control-label">Nome</label>
+                                                        <input class="form-control" type="text" id="nome-reserva" name="nome-reserva">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col form-group">
+                                                        <label for="data-reserva" class="form-control-label">Data da reserva</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control datepicker" type="text" id="data-reserva" name="data-reserva">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col form-group">
+                                                        <label for="id-unidade" class="form-control-label">Código unidade</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control find-id" type="tel" id="id-unidade" name="id-unidade">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col form-group">
+                                                        <label for="id-cliente" class="form-control-label">Código cliente</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control find-id" type="tel" id="id-cliente" name="id-cliente">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button onclick="clean(this);" type="button" class="btn btn-outline" data-dismiss="modal">Cancelar</button>
+                                            <button onclick="add(event);" type="button" class="btn btn-primary add ml-auto">Cadastrar</button>
+                                            <button onclick="edit(this, event);" type="button" class="btn btn-primary ml-auto d-none">Alterar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- RESERVATION -->
+
+                            <!-- PROPOSAL -->
+                            <div class="modal fade" id="modal-proposal" tabindex="-1" role="dialog" aria-labelledby="modal-proposal" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Cadastrar proposta</h1>
+                                            <h1 class="modal-title d-none">Editar proposta</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form autocomplete="off" id="form-proposal">
+                                                <div class="row">
+                                                    <div class="col form-group">
+                                                        <label for="nome-proposta" class="form-control-label">Nome</label>
+                                                        <input class="form-control" type="text" id="nome-proposta" name="nome-proposta">
+                                                    </div>
+                                                    <div class="col form-group">
+                                                        <label for="data-proposta" class="form-control-label">Data da proposta</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control datepicker" type="text" id="data-proposta" name="data-proposta">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col form-group">
+                                                        <label for="pagamento" class="form-control-label">Forma de pagamento</label>
+                                                        <select class="form-control" type="text" id="pagamento" name="pagamento">
+                                                            <option selected>Avista</option>
+                                                            <option>Financiamento</option>
+                                                            <option>Crédito</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col form-group">
+                                                        <label for="id-reserva" class="form-control-label">Código reserva</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control find-id" type="tel" id="id-reserva" name="id-reserva">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col form-group">
+                                                        <label for="id-cliente" class="form-control-label">Código cliente</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control find-id" type="tel" id="id-cliente" name="id-cliente">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col form-group">
+                                                        <label for="id-unidade" class="form-control-label">Código unidade</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control find-id" type="tel" id="id-unidade" name="id-unidade">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button onclick="clean(this);" type="button" class="btn btn-outline" data-dismiss="modal">Cancelar</button>
+                                            <button onclick="add(event);" type="button" class="btn btn-primary add ml-auto">Cadastrar</button>
+                                            <button onclick="edit(this, event);" type="button" class="btn btn-primary ml-auto d-none">Alterar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- PROPOSAL -->
+
+                            <!-- SALE -->
+                            <div class="modal fade" id="modal-sale" tabindex="-1" role="dialog" aria-labelledby="modal-sale" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Cadastrar venda</h1>
+                                            <h1 class="modal-title d-none">Editar venda</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form autocomplete="off" id="form-sale">
+                                                <div class="row">
+                                                    <div class="col form-group">
+                                                        <label for="nome-venda" class="form-control-label">Nome</label>
+                                                        <input class="form-control" type="text" id="nome-venda" name="nome-venda">
+                                                    </div>
+                                                    <div class="col form-group">
+                                                        <label for="data-venda" class="form-control-label">Data da venda</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control datepicker" type="text" id="data-venda" name="data-venda">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col form-group">
+                                                        <label for="id-cliente" class="form-control-label">Código cliente</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control find-id" type="tel" id="id-cliente" name="id-cliente">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col form-group">
+                                                        <label for="id-unidade" class="form-control-label">Código unidade</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control find-id" type="tel" id="id-unidade" name="id-unidade">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col form-group">
+                                                        <label for="valor-unidade" class="form-control-label">Valor unidade</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control money" type="tel" id="valor-unidade" name="valor-unidade">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col form-group">
+                                                        <label for="valor-total" class="form-control-label">Valor total</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control money" type="tel" id="valor-total" name="valor-total">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button onclick="clean(this);" type="button" class="btn btn-outline" data-dismiss="modal">Cancelar</button>
+                                            <button onclick="add(event);" type="button" class="btn btn-primary add ml-auto">Cadastrar</button>
+                                            <button onclick="edit(this, event);" type="button" class="btn btn-primary ml-auto d-none">Alterar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SALE -->
+
                             <!-- MODALS -->
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-        <!-- CONTENT -->
+
+    </div>
+    <!-- CONTENT -->
     </div>
 
     <!-- Core -->
@@ -104,9 +458,8 @@
     <script src="./assets/js/core.min.js"></script>
 
     <!-- JS -->
-
     <script src="./assets/js/main.min.js"></script>
-    <script src="./assets/js/catalog.min.js"></script>
+
 </body>
 
 </html>

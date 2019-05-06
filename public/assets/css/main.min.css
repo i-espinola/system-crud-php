@@ -8,10 +8,10 @@
   background: linear-gradient(0deg, #2dce89 0, #2dcecc 100%); }
 
 .bg-gradient-orange {
-  background: linear-gradient(87deg, #fb6340 0, #fbb140 100%) !important; }
+  background: linear-gradient(87deg, #fb6340 0, #fbb140 100%); }
 
 .bg-gradient-red {
-  background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important; }
+  background: linear-gradient(87deg, #f5365c 0, #f56036 100%); }
 
 .color-purple {
   background: #825ee4; }
@@ -154,8 +154,8 @@ body {
       align-items: center;
       justify-content: center; }
       body .main-content .tab-content table .table-actions a.btn-edit:hover {
-        background: linear-gradient(87deg, #fb6340 0, #fbb140 100%) !important; }
+        background: linear-gradient(87deg, #fb6340 0, #fbb140 100%); }
       body .main-content .tab-content table .table-actions a.btn-del:hover {
-        background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important; }
+        background: linear-gradient(87deg, #f5365c 0, #f56036 100%); }
     body .main-content .tab-content table .table-actions a + a {
       margin: 0 0.5rem; }
