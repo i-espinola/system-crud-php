@@ -69,7 +69,7 @@
                             <a class="nav-link nav-link-icon" href="clients.php"><span class="nav-link-inner--text">Clientes</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-icon" href="index.html"><i class="fas fa-home"></i></a>
+                            <a class="nav-link nav-link-icon" href="index.php"><i class="fas fa-home"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -128,6 +128,7 @@
                                         <table class="table table-flush">
                                             <thead class="thead-light">
                                                 <tr>
+                                                    <th>Código</th>
                                                     <th>Nome</th>
                                                     <th>Tipo</th>
                                                     <th>Endereço</th>
@@ -143,6 +144,7 @@
                                                 if ($enterprise->num_rows > 0) {
                                                     while ($e_row = $enterprise->fetch_assoc()) { ?>
                                                         <tr>
+                                                            <td><?php echo $e_row['id']; ?></td>
                                                             <td><?php echo $e_row['name']; ?></td>
                                                             <td><?php echo $e_row['type']; ?></td>
                                                             <td><?php echo $e_row['address']; ?></td>
@@ -179,6 +181,7 @@
                                         <table class="table table-flush">
                                             <thead class="thead-light">
                                                 <tr>
+                                                    <th>Código</th>
                                                     <th>Nome</th>
                                                     <th>Ações</th>
                                                 </tr>
@@ -189,6 +192,7 @@
                                                 if ($block->num_rows > 0) {
                                                     while ($b_row = $block->fetch_assoc()) { ?>
                                                         <tr>
+                                                            <td><?php echo $b_row['id']; ?></td>
                                                             <td><?php echo $b_row['name']; ?></td>
                                                             <td class="table-actions">
                                                                 <span class="d-none"><?php echo $b_row['id']; ?></span>
@@ -220,6 +224,7 @@
                                         <table class="table table-flush">
                                             <thead class="thead-light">
                                                 <tr>
+                                                    <th>Código</th>
                                                     <th>Nome</th>
                                                     <th>Posição</th>
                                                     <th>Ações</th>
@@ -231,6 +236,7 @@
                                                 if ($s_storey->num_rows > 0) {
                                                     while ($s_row = $s_storey->fetch_assoc()) { ?>
                                                         <tr>
+                                                            <td><?php echo $s_row['id']; ?></td>
                                                             <td><?php echo $s_row['name']; ?></td>
                                                             <td><?php echo $s_row['position']; ?></td>
                                                             <td class="table-actions">
@@ -263,6 +269,7 @@
                                         <table class="table table-flush">
                                             <thead class="thead-light">
                                                 <tr>
+                                                    <th>Código</th>
                                                     <th>Nome</th>
                                                     <th>Status</th>
                                                     <th>Vendável</th>
@@ -279,6 +286,7 @@
                                                 if ($unit->num_rows > 0) {
                                                     while ($u_row = $unit->fetch_assoc()) { ?>
                                                         <tr>
+                                                            <td><?php echo $u_row['id']; ?></td>
                                                             <td><?php echo $u_row['name']; ?></td>
                                                             <td><?php echo $u_row['status']; ?></td>
                                                             <td><?php echo $u_row['vendible']; ?></td>
@@ -318,13 +326,13 @@
                                                         <span>É possível adicionar <b>blocos</b> e <b>unidades</b> neste empreendimento</span>
                                                         <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
                                                             <li class="nav-item">
-                                                                <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="enterprise" data-toggle="tab" href="#" role="tab" aria-selected="true">Empreendimento</a>
+                                                                <a onclick="subNavigator(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="enterprise" data-toggle="tab" href="#" role="tab" aria-selected="true">Empreendimento</a>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="block" data-toggle="tab" href="#" role="tab">Bloco</a>
+                                                                <a onclick="subNavigator(this)" class="nav-link mb-sm-3 mb-md-0" data-option="block" data-toggle="tab" href="#" role="tab">Bloco</a>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="unit" data-toggle="tab" href="#" role="tab">Unidade</a>
+                                                                <a onclick="subNavigator(this)" class="nav-link mb-sm-3 mb-md-0" data-option="unit" data-toggle="tab" href="#" role="tab">Unidade</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -364,13 +372,13 @@
                                                     <div class="col form-group">
                                                         <label for="inicio" class="form-control-label">Data de início</label>
                                                         <div class="input-group">
-                                                            <input class="form-control data" placeholder="Inicio" type="text" id="inicio" name="inicio">
+                                                            <input class="form-control" placeholder="Inicio" type="text" id="inicio" name="inicio">
                                                         </div>
                                                     </div>
                                                     <div class="col form-group">
                                                         <label for="conclusao" class="form-control-label">Data de conclusão</label>
                                                         <div class="input-group">
-                                                            <input class="form-control data" placeholder="Conclusão" type="text" id="conclusao" name="conclusao">
+                                                            <input class="form-control" placeholder="Conclusão" type="text" id="conclusao" name="conclusao">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -401,13 +409,13 @@
                                                         <span>É possível adicionar <b>Andares</b> e <b>Unidades</b> neste bloco</span>
                                                         <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
                                                             <li class="nav-item">
-                                                                <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="block" data-toggle="tab" href="#" role="tab" aria-selected="true">Bloco</a>
+                                                                <a onclick="subNavigator(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="block" data-toggle="tab" href="#" role="tab" aria-selected="true">Bloco</a>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="storey" data-toggle="tab" href="#" role="tab">Andares</a>
+                                                                <a onclick="subNavigator(this)" class="nav-link mb-sm-3 mb-md-0" data-option="storey" data-toggle="tab" href="#" role="tab">Andares</a>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="unit" data-toggle="tab" href="#" role="tab">Unidade</a>
+                                                                <a onclick="subNavigator(this)" class="nav-link mb-sm-3 mb-md-0" data-option="unit" data-toggle="tab" href="#" role="tab">Unidade</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -447,10 +455,10 @@
                                                         <span>É possível adicionar <b>Unidades</b> neste Andar</span>
                                                         <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
                                                             <li class="nav-item">
-                                                                <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="storey" data-toggle="tab" href="#" role="tab" aria-selected="true">Andares</a>
+                                                                <a onclick="subNavigator(this)" class="nav-link mb-sm-3 mb-md-0 active" data-option="storey" data-toggle="tab" href="#" role="tab" aria-selected="true">Andares</a>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a onclick="navRegister(this)" class="nav-link mb-sm-3 mb-md-0" data-option="unit" data-toggle="tab" href="#" role="tab">Unidade</a>
+                                                                <a onclick="subNavigator(this)" class="nav-link mb-sm-3 mb-md-0" data-option="unit" data-toggle="tab" href="#" role="tab">Unidade</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -599,7 +607,7 @@
     <!-- JS -->
 
     <script src="./assets/js/main.min.js"></script>
-    <script src="./assets/js/catalog.min.js"></script>
+
 </body>
 
 </html>

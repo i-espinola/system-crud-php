@@ -15,7 +15,7 @@
     <!-- CSS -->
     <link type="text/css" href="./assets/css/core.min.css" rel="stylesheet">
     <link type="text/css" href="./assets/css/main.min.css" rel="stylesheet">
-    <link type="text/css" href="./assets/css/skin_blue.min.css" rel="stylesheet">
+    <link type="text/css" href="./assets/css/skin_green.min.css" rel="stylesheet">
 
     <!-- PHP -->
     <?php include("assets/php/client_list.php"); ?>
@@ -64,7 +64,7 @@
                             <a class="nav-link nav-link-icon" href="#"><span class="nav-link-inner--text">Clientes</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-icon" href="index.html"><i class="fas fa-home"></i></a>
+                            <a class="nav-link nav-link-icon" href="index.php"><i class="fas fa-home"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -74,6 +74,21 @@
 
         <!-- HEADER -->
         <div class="header pb-8 pt-5 pt-md-8">
+            <div class="container align-items-center">
+                <div class="header-body">
+                    <div class="row align-items-center">
+                        <div class="col-xl-10">
+                            <div class="nav-wrapper invisible">
+                                <ul class="nav nav-pills nav-fill flex-column flex-md-row" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link mb-sm-3 mb-md-0 active" id="client-tab" data-toggle="tab" href="#client" role="tab" aria-controls="client" aria-selected="true">clientes</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- HEADER -->
 
@@ -210,7 +225,7 @@
     <!-- JS -->
 
     <script src="./assets/js/main.min.js"></script>
-    <script src="./assets/js/catalog.min.js"></script>
+
 </body>
 
 </html>

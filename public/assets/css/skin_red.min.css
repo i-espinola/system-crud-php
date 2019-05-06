@@ -8,10 +8,10 @@
   background: linear-gradient(0deg, #2dce89 0, #2dcecc 100%); }
 
 .bg-gradient-orange {
-  background: linear-gradient(87deg, #fb6340 0, #fbb140 100%) !important; }
+  background: linear-gradient(87deg, #fb6340 0, #fbb140 100%); }
 
 .bg-gradient-red {
-  background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important; }
+  background: linear-gradient(87deg, #f5365c 0, #f56036 100%); }
 
 .color-purple {
   background: #825ee4; }
@@ -55,13 +55,13 @@ body h3 {
   color: #8d8d8d; }
 
 body .header {
-  background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important; }
+  background: linear-gradient(87deg, #f5365c 0, #f56036 100%); }
   body .header .header-body .nav-wrapper .nav-item .nav-link.active {
     color: #f5365c;
     background-color: #ffffff; }
 
 body .tab-content .icon-shape {
-  background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important; }
+  background: linear-gradient(87deg, #f5365c 0, #f56036 100%); }
 
 body .tab-content .modal {
   transition: all 0.15s ease; }
@@ -112,6 +112,6 @@ body .tab-content .modal {
     color: #f5365c; }
 
 body .modal-backdrop {
-  background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important; }
+  background: linear-gradient(87deg, #f5365c 0, #f56036 100%); }
   body .modal-backdrop.show {
     opacity: 0.85; }

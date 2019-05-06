@@ -94,7 +94,7 @@ export function views() {
         //     removeComments: true
         // }))
         .pipe(gulp.dest(path.views.build))
-        .pipe(browserSync.stream());
+    // .pipe(browserSync.stream());
 }
 
 // Task SASS Precompile
@@ -106,7 +106,7 @@ export function styles() {
             suffix: '.min'
         }))
         .pipe(gulp.dest(path.styles.build))
-        .pipe(browserSync.stream());
+    // .pipe(browserSync.stream());
 }
 
 // Task JS Precompile
@@ -114,13 +114,13 @@ export function scripts() {
     return gulp.src(path.scripts.src, {
             sourcemaps: true
         })
-        .pipe(babel())
+        // .pipe(babel())
         // .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
         .pipe(gulp.dest(path.scripts.build))
-        .pipe(browserSync.stream());
+    // .pipe(browserSync.stream());
 }
 
 // Task Otimizer Images
@@ -130,7 +130,7 @@ export function imgs() {
             progressive: true
         }))
         .pipe(gulp.dest(path.img.build))
-        .pipe(browserSync.stream());
+    // .pipe(browserSync.stream());
 }
 
 // Task Import Fonts
