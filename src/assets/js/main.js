@@ -1,6 +1,6 @@
 // Set JS version
 /*jshint esversion: 6 */
-var chk = 0;
+
 
 $(document).ready(function () {
 
@@ -28,13 +28,13 @@ function toggleModal(el) {
 }
 
 function add(e) {
-    reset();
     e.preventDefault();
     var el = e.target;
     var id = $(el).closest('.modal').attr('id');
     var idShort = id.substr(6);
     var nForm = $('#modal-' + idShort + ' form');
     var multiForm = [];
+    var chk = 0;
 
     for (i = 0; i < nForm.length; i++) {
         var newId = nForm.eq(i).data('id');
@@ -55,16 +55,12 @@ function add(e) {
         });
     }
 
-    check(multiForm);
-    clean(el);
 
-}
-
-function check(ident) {
-    for (i = 0; i < ident.length; i++) {
-        var upDate = ident[i];
+    for (i = 0; i < multiForm.length; i++) {
+        var upDate = multiForm[i];
         $("#" + upDate + " .table-responsive").load(location.href + " #" + upDate + " .table-responsive");
     }
+
     if (chk == 0) {
         $("[id*='modal-']").modal('hide');
         $("#modal-success").modal('show');
@@ -72,14 +68,12 @@ function check(ident) {
         $("[id*='modal-']").modal('hide');
         $("#modal-fail").modal('show');
     }
+
+    clean(el);
 }
 
 function count() {
     chk++;
-}
-
-function reset() {
-    chk = 0;
 }
 
 function del(el) {
