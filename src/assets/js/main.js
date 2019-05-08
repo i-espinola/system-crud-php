@@ -1,8 +1,8 @@
 // Set JS version
 /*jshint esversion: 6 */
-chk = 0;
+var chk = 0;
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     inputMask();
 
@@ -16,7 +16,7 @@ function inputMask() {
     $('.find-id').mask('00');
     $('.date').mask('00/00/0000');
 
-    $('.v-max').keyup(function(e) {
+    $('.v-max').keyup(function (e) {
 
     });
 
@@ -35,7 +35,7 @@ function add(e) {
     var idShort = id.substr(6);
     var nForm = $('#modal-' + idShort + ' form');
     var multiForm = [];
-
+    debugger
     for (i = 0; i < nForm.length; i++) {
         var newId = nForm.eq(i).data('id');
         newId = newId.substr(5);
@@ -46,10 +46,10 @@ function add(e) {
             async: true,
             url: 'assets/php/' + newId + '_add.php',
             data: nForm.eq(i).serialize(),
-            success: function() {
+            success: function () {
 
             },
-            error: function() {
+            error: function () {
                 count();
             }
         });
@@ -92,12 +92,12 @@ function del(el) {
         data: {
             id: idDel
         },
-        success: function() {
+        success: function () {
             $("#modal-" + id).modal('hide');
             $("#modal-success").modal('show');
             $("#" + id + " .table-responsive").load(location.href + " #" + id + " .table-responsive");
         },
-        error: function() {
+        error: function () {
             $("#modal-" + id).modal('hide');
             $("#modal-fail").modal('show');
             $("#" + id + " .table-responsive").load(location.href + " #" + id + " .table-responsive");
@@ -117,12 +117,12 @@ function edit(el, event) {
         type: 'POST',
         url: 'assets/php/' + idShort + '_edit.php',
         data: data,
-        success: function(response) {
+        success: function (response) {
             $("#modal-" + idShort).modal('hide');
             $("#modal-success").modal('show');
             $("#" + idShort + " .table-responsive").load(location.href + " #" + idShort + " .table-responsive");
         },
-        error: function(response) {
+        error: function (response) {
             $("#modal-" + idShort).modal('hide');
             $("#modal-fail").modal('show');
         }
@@ -149,7 +149,7 @@ function modalEdit(el) {
     var input = $(modal).find(".form-control");
     var data = [];
 
-    row.map(function() {
+    row.map(function () {
         if (i > 0) {
             if ($(el).closest("tr").find("td").length != i) {
                 if ($(this).text().indexOf('m²') != -1) {

@@ -114,8 +114,8 @@ export function scripts() {
     return gulp.src(path.scripts.src, {
             sourcemaps: true
         })
-        .pipe(babel())
-        .pipe(uglify())
+        // .pipe(babel())
+        // .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
