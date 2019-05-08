@@ -35,7 +35,7 @@ function add(e) {
     var idShort = id.substr(6);
     var nForm = $('#modal-' + idShort + ' form');
     var multiForm = [];
-    debugger
+
     for (i = 0; i < nForm.length; i++) {
         var newId = nForm.eq(i).data('id');
         newId = newId.substr(5);
