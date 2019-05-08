@@ -1,5 +1,6 @@
 // Set JS version
 /*jshint esversion: 6 */
+chk = 0;
 
 $(document).ready(function() {
 
@@ -15,6 +16,10 @@ function inputMask() {
     $('.find-id').mask('00');
     $('.date').mask('00/00/0000');
 
+    $('.v-max').keyup(function(e) {
+
+    });
+
 }
 
 function toggleModal(el) {
@@ -23,28 +28,58 @@ function toggleModal(el) {
 }
 
 function add(e) {
+    reset();
     e.preventDefault();
     var el = e.target;
     var id = $(el).closest('.modal').attr('id');
     var idShort = id.substr(6);
     var nForm = $('#modal-' + idShort + ' form');
+    var multiForm = [];
 
     for (i = 0; i < nForm.length; i++) {
         var newId = nForm.eq(i).data('id');
         newId = newId.substr(5);
+        multiForm.push(newId);
 
         $.ajax({
             type: 'POST',
             async: true,
             url: 'assets/php/' + newId + '_add.php',
             data: nForm.eq(i).serialize(),
-            success: function(response) {
-                console.log(response);
+            success: function() {
+
+            },
+            error: function() {
+                count();
             }
         });
     }
 
-    location.reload(true);
+    check(multiForm);
+    clean(el);
+
+}
+
+function check(ident) {
+    for (i = 0; i < ident.length; i++) {
+        var upDate = ident[i];
+        $("#" + upDate + " .table-responsive").load(location.href + " #" + upDate + " .table-responsive");
+    }
+    if (chk == 0) {
+        $("[id*='modal-']").modal('hide');
+        $("#modal-success").modal('show');
+    } else {
+        $("[id*='modal-']").modal('hide');
+        $("#modal-fail").modal('show');
+    }
+}
+
+function count() {
+    chk++;
+}
+
+function reset() {
+    chk = 0;
 }
 
 function del(el) {
@@ -57,36 +92,48 @@ function del(el) {
         data: {
             id: idDel
         },
-        success: function(response) {
-            console.log(response);
+        success: function() {
+            $("#modal-" + id).modal('hide');
+            $("#modal-success").modal('show');
+            $("#" + id + " .table-responsive").load(location.href + " #" + id + " .table-responsive");
+        },
+        error: function() {
+            $("#modal-" + id).modal('hide');
+            $("#modal-fail").modal('show');
+            $("#" + id + " .table-responsive").load(location.href + " #" + id + " .table-responsive");
         }
     });
-    location.reload(true);
 }
 
 function edit(el, event) {
-    var modal = $(el).closest(".modal");
-    var id = $(el).closest('.modal').attr('id');
-    var idShort = id.substr(6);
     var data = "id=" + $(el).closest(".modal-footer").find('span').text() + '&';
+    var id = $(el).closest('.modal').attr('id');
+    var modal = $(el).closest(".modal");
+    var idShort = id.substr(6);
     data += $(modal).find('form').serialize();
-
     event.preventDefault();
+
     $.ajax({
         type: 'POST',
         url: 'assets/php/' + idShort + '_edit.php',
         data: data,
         success: function(response) {
-            console.log(response);
+            $("#modal-" + idShort).modal('hide');
+            $("#modal-success").modal('show');
+            $("#" + idShort + " .table-responsive").load(location.href + " #" + idShort + " .table-responsive");
+        },
+        error: function(response) {
+            $("#modal-" + idShort).modal('hide');
+            $("#modal-fail").modal('show');
         }
     });
-    location.reload(true);
 }
 
 function clean(el) {
     var father = "#" + $(el).closest(".modal").attr('id');
     $(father + ' .modal-footer span').remove();
     $(father + ' form input').val('');
+    $(father + ' .datepicker').val("").datepicker("update")
     $(father + ' .nav-wrapper').show();
 
     if ($(father + ' button.btn-primary.add').hasClass("d-none")) {

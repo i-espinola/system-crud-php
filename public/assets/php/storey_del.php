@@ -10,5 +10,7 @@ $del = $connect->query($sql);
 $connect->close();
 
 if ($del) {
-    return "success";
+    echo json_encode(success);
+} else {
+    echo json_encode(fail);
 }

@@ -14,6 +14,8 @@ if (isset($_POST['nome-andar']) && isset($_POST['posicao']) && $_POST['nome-anda
     $connect->close();
 
     if ($push) {
-        echo "success";
+        echo json_encode(success);
+    } else {
+        echo json_encode(fail);
     }
 }

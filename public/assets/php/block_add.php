@@ -12,6 +12,8 @@ if (isset($_POST['nome-bloco']) && $_POST['nome-bloco'] != '') {
     $connect->close();
 
     if ($push) {
-        echo "success";
+        echo json_encode(success);
+    } else {
+        echo json_encode(fail);
     }
 }

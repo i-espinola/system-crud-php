@@ -41,6 +41,8 @@ if (
     $connect->close();
 
     if ($edit) {
-        echo "success";
+        echo json_encode(success);
+    } else {
+        echo json_encode(fail);
     }
 }

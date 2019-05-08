@@ -92,6 +92,8 @@ body {
     transition: all 0.15s ease; }
     body .main-content .modal .modal-dialog {
       max-width: 60rem; }
+      body .main-content .modal .modal-dialog.w-min {
+        width: max-content; }
       body .main-content .modal .modal-dialog .modal-header {
         display: block;
         text-align: center; }

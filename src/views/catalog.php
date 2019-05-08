@@ -493,8 +493,6 @@
                             </div>
                             <!-- STOREY -->
 
-
-
                             <!-- UNITS -->
                             <div class="modal fade" id="modal-unit" tabindex="-1" role="dialog" aria-labelledby="modal-unit" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -587,6 +585,42 @@
                                 </div>
                             </div>
                             <!-- UNITS -->
+
+                            <!-- SUCCESSS -->
+                            <div class="modal fade" id="modal-success" tabindex="-1" role="dialog" aria-labelledby="modal-success" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered w-min" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Tudo certo! :)</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Tudo funcionou perfeitamente nesta operação.</h3>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary add ml-auto" data-dismiss="modal">Ok</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SUCCESSS -->
+
+                            <!-- FAIL -->
+                            <div class="modal fade" id="modal-fail" tabindex="-1" role="dialog" aria-labelledby="modal-fail" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered w-min" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">OPS! :/</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Algo não funcionou como planejamos. Por favor, tente realizar este operação novamente.</h3>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary add ml-auto" data-dismiss="modal">Entendi</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAIL -->
 
                             <!-- MODALS -->
                         </div>

@@ -41,6 +41,8 @@ if (
     $connect->close();
 
     if ($push) {
-        echo "success";
+        echo json_encode(success);
+    } else {
+        echo json_encode(fail);
     }
 }

@@ -116,10 +116,10 @@
                                                 <tr>
                                                     <th>Nome</th>
                                                     <th>CFP</th>
-                                                    <th>Endereço</th>
+                                                    <th>EndereÃ§o</th>
                                                     <th>Data nascimento</th>
                                                     <th>Renda</th>
-                                                    <th>Ações</th>
+                                                    <th>AÃ§Ãµes</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -148,7 +148,9 @@
                             </div>
                             <!-- SECTION CLIENTS -->
 
-                            <!-- MODALS -->
+                            <!-- MODAL -->
+
+                            <!-- CLIENT -->
                             <div class="modal fade" id="modal-client" tabindex="-1" role="dialog" aria-labelledby="modal-client" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
@@ -157,7 +159,7 @@
                                             <h1 class="modal-title d-none">Editar cliente</h1>
                                         </div>
                                         <div class="modal-body">
-                                            <form autocomplete="off" class="form-client" method="POST">
+                                            <form autocomplete="off" data-id="form-client" method="POST">
                                                 <div class="row">
                                                     <div class="col form-group">
                                                         <label for="nome-cliente" class="form-control-label">Nome</label>
@@ -170,7 +172,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col form-group">
-                                                        <label for="endereco" class="form-control-label">Endereço</label>
+                                                        <label for="endereco" class="form-control-label">EndereÃ§o</label>
                                                         <input class="form-control" type="text" id="endereco" name="endereco">
                                                     </div>
                                                 </div>
@@ -204,7 +206,45 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- MODALS -->
+                            <!-- CLIENT -->
+
+                            <!-- SUCCESSS -->
+                            <div class="modal fade" id="modal-success" tabindex="-1" role="dialog" aria-labelledby="modal-success" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered w-min" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Tudo certo! :)</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Tudo funcionou perfeitamente nesta operação.</h3>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary add ml-auto" data-dismiss="modal">Ok</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SUCCESSS -->
+
+                            <!-- FAIL -->
+                            <div class="modal fade" id="modal-fail" tabindex="-1" role="dialog" aria-labelledby="modal-fail" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered w-min" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">OPS! :/</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Algo não funcionou como planejamos. Por favor, tente realizar este operação novamente.</h3>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary add ml-auto" data-dismiss="modal">Entendi</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAIL -->
+
+                            <!-- MODAL -->
                         </div>
                     </div>
                 </div>
