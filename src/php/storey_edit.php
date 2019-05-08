@@ -18,6 +18,8 @@ if (isset($_POST['id']) && isset($_POST['nome-andar']) && isset($_POST['posicao'
     $connect->close();
 
     if ($edit) {
-        echo "success";
+        echo json_encode(success);
+    } else {
+        echo json_encode(fail);
     }
 }

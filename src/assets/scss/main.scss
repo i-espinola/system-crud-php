@@ -1,66 +1,48 @@
 @import "custom/colors";
-
 body {
     background-color: #e3e3e3;
     color: $color-grey;
-
-
     .main-content {
-
         button {
             outline: none;
             border: none;
         }
-
         .align-items-center {
             align-items: center;
             justify-content: center;
             text-align: center;
         }
-
         .navbar-top {
             border-bottom: 1px solid $color-blank;
         }
-
         .navbar-nav {
-
             .active>.nav-link span {
                 font-weight: bold;
                 color: $color-blank;
             }
         }
-
-
         .navbar-collapse .collapse-brand img {
             filter: invert(1);
         }
-
         .header {
-
             .nav-pills {
-
                 &.show>.nav-link {
                     color: $color-blue;
                     background-color: $color-blank;
                 }
-
                 .nav-item {
-
                     &:first-child>.nav-link {
                         border-left: 1px solid $color-blank;
                         border-top-left-radius: 0.375rem;
                         border-bottom-left-radius: 0.375rem;
                     }
-
                     &:last-child>.nav-link {
                         border-top-right-radius: 0.375rem;
                         border-bottom-right-radius: 0.375rem;
                     }
-
                     &:not(:last-child) {
                         padding-right: 0;
                     }
-
                     .nav-link {
                         padding: 0.75rem 1rem;
                         color: $color-blank;
@@ -75,27 +57,23 @@ body {
                 }
             }
         }
-
         .modal {
             transition: all 0.15s ease;
-
             .modal-dialog {
                 max-width: 60rem;
-
+                &.w-min {
+                    width: max-content;
+                }
                 .modal-header {
                     display: block;
                     text-align: center;
                 }
-
                 .modal-body {
                     padding: 1.5rem 1.5rem 0;
-
                     label {
                         color: $color-grey;
                     }
-
                     .form-group {
-
                         .form-control,
                         .input-group-text,
                         .input-group-alternative {
@@ -105,44 +83,34 @@ body {
                 }
             }
         }
-
         .tab-content {
-
             .card-top {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-
                 h3 {
                     font-size: 2rem;
                 }
-
                 .icon-shape {
                     margin: 0 1.5rem;
                     cursor: pointer;
                 }
             }
-
             .nav-pills {
                 margin-top: 1rem;
-
                 .nav-item {
-
                     &:first-child>.nav-link {
                         border-left: 1px solid $color-border;
                         border-top-left-radius: 0.375rem;
                         border-bottom-left-radius: 0.375rem;
                     }
-
                     &:last-child>.nav-link {
                         border-top-right-radius: 0.375rem;
                         border-bottom-right-radius: 0.375rem;
                     }
-
                     &:not(:last-child) {
                         padding-right: 0;
                     }
-
                     .nav-link {
                         padding: 0.75rem 1rem;
                         font-weight: bold;
@@ -155,25 +123,20 @@ body {
                     }
                 }
             }
-
             table {
-
                 th:last-child {
                     text-align: center;
                     width: 1%;
                     white-space: nowrap;
                 }
-
                 td {
                     text-transform: capitalize;
                 }
-
                 .table-actions {
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     white-space: nowrap;
-
                     a {
                         background: $color-grey;
                         border-radius: 50%;
@@ -184,16 +147,13 @@ body {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-
                         &.btn-edit:hover {
                             background: $bg-gradient-orange;
                         }
-
                         &.btn-del:hover {
                             background: $bg-gradient-red;
                         }
                     }
-
                     a+a {
                         margin: 0 0.5rem;
                     }

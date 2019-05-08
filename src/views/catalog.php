@@ -338,7 +338,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <form autocomplete="off" id="form-enterprise" method="POST">
+                                            <form autocomplete="off" data-id="form-enterprise" method="POST">
                                                 <div class="row">
                                                     <div class="col form-group">
                                                         <label for="nome-empreendimento" class="form-control-label">Nome</label>
@@ -421,7 +421,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <form autocomplete="off" id="form-block">
+                                            <form autocomplete="off" data-id="form-block">
                                                 <div class="row">
                                                     <div class="col form-group">
                                                         <label for="nome-bloco" class="form-control-label">Nome</label>
@@ -464,7 +464,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <form autocomplete="off" id="form-storey">
+                                            <form autocomplete="off" data-id="form-storey">
                                                 <div class="row">
                                                     <div class="col form-group">
                                                         <label for="nome-andar" class="form-control-label">Nome</label>
@@ -502,7 +502,7 @@
                                             <h1 class="modal-title d-none">Editar unidade</h1>
                                         </div>
                                         <div class="modal-body">
-                                            <form autocomplete="off" id="form-unit">
+                                            <form autocomplete="off" data-id="form-unit">
                                                 <div class="row">
                                                     <div class="col form-group">
                                                         <label for="nome-unidade" class="form-control-label">Nome</label>
@@ -562,7 +562,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col form-group">
-                                                        <label for="valor-minimo" class="form-control-label">Valor</label>
+                                                        <label for="valor-minimo" class="form-control-label">Valor minimo</label>
                                                         <div class="input-group ">
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text">R$</span>
@@ -585,6 +585,42 @@
                                 </div>
                             </div>
                             <!-- UNITS -->
+
+                            <!-- SUCCESSS -->
+                            <div class="modal fade" id="modal-success" tabindex="-1" role="dialog" aria-labelledby="modal-success" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered w-min" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Tudo certo! :)</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Tudo funcionou perfeitamente nesta operação.</h3>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary add ml-auto" data-dismiss="modal">Ok</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SUCCESSS -->
+
+                            <!-- FAIL -->
+                            <div class="modal fade" id="modal-fail" tabindex="-1" role="dialog" aria-labelledby="modal-fail" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered w-min" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">OPS! :/</h1>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>Algo não funcionou como planejamos. Por favor, tente realizar este operação novamente.</h3>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary add ml-auto" data-dismiss="modal">Entendi</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAIL -->
 
                             <!-- MODALS -->
                         </div>
