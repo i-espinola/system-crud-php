@@ -172,7 +172,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col form-group">
-                                                        <label for="endereco" class="form-control-label">EndereÃ§o</label>
+                                                        <label for="endereco" class="form-control-label">Endereço</label>
                                                         <input class="form-control" type="text" id="endereco" name="endereco">
                                                     </div>
                                                 </div>

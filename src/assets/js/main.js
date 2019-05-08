@@ -133,7 +133,7 @@ function clean(el) {
     var father = "#" + $(el).closest(".modal").attr('id');
     $(father + ' .modal-footer span').remove();
     $(father + ' form input').val('');
-    $(father + ' .datepicker').val("").datepicker("update")
+    $(father + ' .datepicker').val("").datepicker("update");
     $(father + ' .nav-wrapper').show();
 
     if ($(father + ' button.btn-primary.add').hasClass("d-none")) {

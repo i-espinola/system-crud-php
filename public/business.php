@@ -416,13 +416,25 @@
                                                     <div class="col form-group">
                                                         <label for="valor-unidade" class="form-control-label">Valor unidade</label>
                                                         <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text">R$</span>
+                                                            </div>
                                                             <input class="form-control money" type="tel" id="valor-unidade" name="valor-unidade">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">,00</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="col form-group">
                                                         <label for="valor-total" class="form-control-label">Valor total</label>
                                                         <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text">R$</span>
+                                                            </div>
                                                             <input class="form-control money" type="tel" id="valor-total" name="valor-total">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">,00</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
