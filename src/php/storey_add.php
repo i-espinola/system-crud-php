@@ -10,12 +10,12 @@ if (isset($_POST['nome-andar']) && isset($_POST['posicao']) && $_POST['nome-anda
     $connect = mysqli_connect($host, $user, $pass, $base);
     $sql   = "INSERT  INTO `takeoff1_test`.`storeys` (`name`, `position`) VALUE ('" . $nome_bloco . "', '" . $posicao . "');";
 
-    $push  = mysqli_query($connect, $sql) or die(error());
+    $push  = mysqli_query($connect, $sql);
     $connect->close();
 
     if ($push) {
-        echo json_encode(success);
+        echo json_encode(1);
     } else {
-        echo json_encode(fail);
+        echo json_encode(0);
     }
 }

@@ -47,12 +47,12 @@ if (
     '" . $vendavel . "'
     );";
 
-    $push  = mysqli_query($connect, $sql) or die(error());
+    $push  = mysqli_query($connect, $sql);
     $connect->close();
 
     if ($push) {
-        echo json_encode(success);
+        echo json_encode(1);
     } else {
-        echo json_encode(fail);
+        echo json_encode(0);
     }
 }

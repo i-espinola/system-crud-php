@@ -15,11 +15,6 @@ function inputMask() {
     $('.cpf').mask('000.000.000-00');
     $('.find-id').mask('00');
     $('.date').mask('00/00/0000');
-
-    $('.v-max').keyup(function (e) {
-
-    });
-
 }
 
 function toggleModal(el) {
@@ -29,56 +24,55 @@ function toggleModal(el) {
 
 function add(e) {
     e.preventDefault();
-    var el = e.target;
-    var id = $(el).closest('.modal').attr('id');
-    var idShort = id.substr(6);
-    var nForm = $('#modal-' + idShort + ' form');
-    var multiForm = [];
-    var chk = 0;
+    let el = e.target;
+    let id = $(el).closest('.modal').attr('id');
+    let idShort = id.substr(6);
+    let nForm = $('#modal-' + idShort + ' form');
+    let multiForm = [];
+    let asyncRequest = [];
+    let requestCheck = [];
+    debugger
+    loading(el);
 
     for (i = 0; i < nForm.length; i++) {
-        var newId = nForm.eq(i).data('id');
+        let newId = nForm.eq(i).data('id');
         newId = newId.substr(5);
         multiForm.push(newId);
 
-        $.ajax({
+        asyncRequest.push($.ajax({
             type: 'POST',
             async: true,
             url: 'assets/php/' + newId + '_add.php',
             data: nForm.eq(i).serialize(),
-            success: function () {
-
+            success: function (response) {
+                requestCheck.push(response);
             },
-            error: function () {
-                count();
+            error: function (response) {
+                requestCheck.push(response);
             }
-        });
+        }));
     }
 
+    $.when.apply(null, asyncRequest).done(function () {
+        for (i = 0; i < multiForm.length; i++) {
+            let upDate = multiForm[i];
+            $("#" + upDate + " .table-responsive").load(location.href + " #" + upDate + " .table-responsive");
+        }
 
-    for (i = 0; i < multiForm.length; i++) {
-        var upDate = multiForm[i];
-        $("#" + upDate + " .table-responsive").load(location.href + " #" + upDate + " .table-responsive");
-    }
-
-    if (chk == 0) {
-        $("[id*='modal-']").modal('hide');
-        $("#modal-success").modal('show');
-    } else {
-        $("[id*='modal-']").modal('hide');
-        $("#modal-fail").modal('show');
-    }
-
-    clean(el);
-}
-
-function count() {
-    chk++;
+        if (Math.min(...requestCheck) === 0) {
+            $("[id*='modal-']").modal('hide');
+            $("#modal-fail").modal('show');
+        } else {
+            $("[id*='modal-']").modal('hide');
+            $("#modal-success").modal('show');
+        }
+        clean(el);
+    });
 }
 
 function del(el) {
-    var idDel = $(el).closest(".table-actions").find('span').text();
-    var id = $(el).closest('.tab-pane').attr('id');
+    let idDel = $(el).closest(".table-actions").find('span').text();
+    let id = $(el).closest('.tab-pane').attr('id');
 
     $.ajax({
         type: 'POST',
@@ -100,10 +94,11 @@ function del(el) {
 }
 
 function edit(el, event) {
-    var data = "id=" + $(el).closest(".modal-footer").find('span').text() + '&';
-    var id = $(el).closest('.modal').attr('id');
-    var modal = $(el).closest(".modal");
-    var idShort = id.substr(6);
+    loading(el);
+    let data = "id=" + $(el).closest(".modal-footer").find('span').text() + '&';
+    let id = $(el).closest('.modal').attr('id');
+    let modal = $(el).closest(".modal");
+    let idShort = id.substr(6);
     data += $(modal).find('form').serialize();
     event.preventDefault();
 
@@ -111,12 +106,12 @@ function edit(el, event) {
         type: 'POST',
         url: 'assets/php/' + idShort + '_edit.php',
         data: data,
-        success: function (response) {
+        success: function () {
             $("#modal-" + idShort).modal('hide');
             $("#modal-success").modal('show');
             $("#" + idShort + " .table-responsive").load(location.href + " #" + idShort + " .table-responsive");
         },
-        error: function (response) {
+        error: function () {
             $("#modal-" + idShort).modal('hide');
             $("#modal-fail").modal('show');
         }
@@ -124,10 +119,10 @@ function edit(el, event) {
 }
 
 function clean(el) {
-    var father = "#" + $(el).closest(".modal").attr('id');
+    let father = "#" + $(el).closest(".modal").attr('id');
     $(father + ' .modal-footer span').remove();
     $(father + ' form input').val('');
-    $(father + ' .datepicker').val("").datepicker("update");
+    $(father + ' .datepicker').datepicker("clearDates")
     $(father + ' .nav-wrapper').show();
 
     if ($(father + ' button.btn-primary.add').hasClass("d-none")) {
@@ -136,12 +131,12 @@ function clean(el) {
 }
 
 function modalEdit(el) {
-    var modal = $(el).closest(".card").find(".rounded-circle").data('target');
-    var id = $(el).closest(".table-actions").find('span').clone(true);
-    var i = $(el).closest("tr").find("td").length;
-    var row = $(el).closest("tr").find("td");
-    var input = $(modal).find(".form-control");
-    var data = [];
+    let modal = $(el).closest(".card").find(".rounded-circle").data('target');
+    let id = $(el).closest(".table-actions").find('span').clone(true);
+    let i = $(el).closest("tr").find("td").length;
+    let row = $(el).closest("tr").find("td");
+    let input = $(modal).find(".form-control");
+    let data = [];
 
     row.map(function () {
         if (i > 0) {
@@ -177,16 +172,26 @@ function modalEdit(el) {
 }
 
 function subNavigator(el) {
-    var father = $(el).closest(".modal-body");
-    var to = $(el).data("option");
-    var from = $(el).closest(".nav-fill").find(".active").data("option");
+    let father = $(el).closest(".modal-body");
+    let to = $(el).data("option");
+    let from = $(el).closest(".nav-fill").find(".active").data("option");
 
     if ($(father).find("form[data-id=form-" + to + "]").length === 0) {
-        var clone = $("#modal-" + to).find("form[data-id=form-" + to + "]").clone(true);
+        let clone = $("#modal-" + to).find("form[data-id=form-" + to + "]").clone(true);
         $(father).find("form[data-id=form-" + from + "]").hide();
         $(father).append(clone);
     } else {
         $(father).find("form[data-id=form-" + from + "]").hide();
         $(father).find("form[data-id=form-" + to + "]").show();
     }
+}
+
+function loading(el) {
+    var $el = $(el);
+
+    debugger
+    $el.button('loading');
+
+    $el.button('reset');
+
 }

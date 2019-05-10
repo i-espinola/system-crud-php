@@ -306,7 +306,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button onclick="clean(this);" type="button" class="btn btn-outline" data-dismiss="modal">Cancelar</button>
-                                            <button onclick="add(event);" type="button" class="btn btn-primary add ml-auto">Cadastrar</button>
+                                            <button onclick="add(event);" type="button" class="btn btn-primary add ml-auto" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Order">Cadastrar</button>
                                             <button onclick="edit(this, event);" type="button" class="btn btn-primary ml-auto d-none">Alterar</button>
                                         </div>
                                     </div>

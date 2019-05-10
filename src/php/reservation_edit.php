@@ -30,12 +30,12 @@ if (
     `id_client` = '" . $id_cliente . "'
     WHERE `reservations`.`id` = '$id' LIMIT 1";
 
-    $edit  = mysqli_query($connect, $sql) or die(error());
+    $edit  = mysqli_query($connect, $sql);
     $connect->close();
 
     if ($edit) {
-        echo json_encode(success);
+        echo json_encode(1);
     } else {
-        echo json_encode(fail);
+        echo json_encode(0);
     }
 }
