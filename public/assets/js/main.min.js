@@ -31,7 +31,6 @@ function add(e) {
     let multiForm = [];
     let asyncRequest = [];
     let requestCheck = [];
-    debugger
     loading(el);
 
     for (i = 0; i < nForm.length; i++) {
@@ -122,7 +121,7 @@ function clean(el) {
     let father = "#" + $(el).closest(".modal").attr('id');
     $(father + ' .modal-footer span').remove();
     $(father + ' form input').val('');
-    $(father + ' .datepicker').datepicker("clearDates")
+    $(father + ' .datepicker').datepicker("clearDates");
     $(father + ' .nav-wrapper').show();
 
     if ($(father + ' button.btn-primary.add').hasClass("d-none")) {
@@ -184,14 +183,4 @@ function subNavigator(el) {
         $(father).find("form[data-id=form-" + from + "]").hide();
         $(father).find("form[data-id=form-" + to + "]").show();
     }
-}
-
-function loading(el) {
-    var $el = $(el);
-
-    debugger
-    $el.button('loading');
-
-    $el.button('reset');
-
 }
