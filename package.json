@@ -1,8 +1,8 @@
 {
-    "name": "koper",
+    "name": "system-crud-php",
     "version": "1.0.0",
-    "description": "Teste Front-end Koper",
-    "private": true,
+    "description": "system-crud-php",
+    "private": false,
     "scripts": {
         "build": "gulp build",
         "clean": "gulp clean",
@@ -11,14 +11,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/i-espinola/koper.git"
+        "url": "git+https://github.com/i-espinola/system-crud-php.git"
     },
     "author": "Ivan Espinola G.",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/i-espinola/koper/issues"
+        "url": "https://github.com/i-espinola/system-crud-php/issues"
     },
-    "homepage": "https://github.com/i-espinola/koper#readme",
+    "homepage": "https://github.com/i-espinola/system-crud-php#readme",
     "dependencies": {},
     "devDependencies": {
         "@babel/core": "^7.4.4",
